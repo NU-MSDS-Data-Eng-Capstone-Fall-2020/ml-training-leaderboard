@@ -1,0 +1,29 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: Core services for CLI Tool
+
+Resources:
+
+  LeaderboardTable: 
+      Type: AWS::DynamoDB::Table
+      Properties: 
+        TableName: LeaderboardTable
+        AttributeDefinitions: 
+          - 
+            AttributeName: "Board"
+            AttributeType: "S"
+          - 
+            AttributeName: "Metric"
+            AttributeType: "S"
+          - 
+            AttributeName: "Value"
+            AttributeType: "N"
+        KeySchema: 
+          - 
+            AttributeName: "Board"
+            KeyType: "HASH"
+          - 
+            AttributeName: "Metric"
+            KeyType: "RANGE"
+        ProvisionedThroughput: 
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1
