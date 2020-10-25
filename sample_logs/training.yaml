@@ -1,0 +1,70 @@
+
+this is from rightangle/logs/training/training-20201025153614-DFdXULtfQOGKDSAucFGHxQ-sagemaker.log
+
+[s3] Successfully downloaded model metadata from s3 key data-0f74113c-c149-48cb-ac45-d06480d4d161/models/rightangle/model_metadata.json to local ./custom_files/agent/model_metadata.json.
+Sensor list 
+    ['SECTOR_LIDAR', 'STEREO_CAMERAS'], 
+    network DEEP_CONVOLUTIONAL_NETWORK_SHALLOW, simapp_version 3.0
+Loaded action space from file: 
+    [
+        {'steering_angle': -10, 'speed': 0.5, 'index': 0}, 
+        {'steering_angle': -10, 'speed': 1, 'index': 1}, 
+        {'steering_angle': 0, 'speed': 0.5, 'index': 2}, 
+        {'steering_angle': 0, 'speed': 1, 'index': 3}, 
+        {'steering_angle': 10, 'speed': 0.5, 'index': 4}, 
+        {'steering_angle': 10, 'speed': 1, 'index': 5}]
+Using the following hyper-parameters
+{
+  "batch_size": 32,
+  "beta_entropy": 0.001,
+  "discount_factor": 0.999,
+  "e_greedy_value": 1.0,
+  "epsilon_steps": 10000,
+  "exploration_type": "categorical",
+  "loss_type": "huber",
+  "lr": 0.0003,
+  "num_episodes_between_training": 20,
+  "num_epochs": 3,
+  "stack_size": 1,
+  "term_cond_avg_score": 100000.0,
+  "term_cond_max_episodes": 100000
+}
+[s3] Successfully uploaded hyperparameters to s3 bucket aws-deepracer-data-us-east-1-1 with s3 key data-0f74113c-c149-48cb-ac45-d06480d4d161/models/rightangle/sagemaker-robomaker-artifacts/ip/hyperparameters.json.
+
+
+Excerpt from rightangle/logs/training/training-20201025153615-DFdXULtfQOGKDSAucFGHxQ-robomaker.log
+SUMMARY
+========
+PARAMETERS
+ * /ALTERNATE_DRIVING_DIRECTION: false
+ * /AWS_REGION: us-east-1
+ * /BODY_SHELL_TYPE: deepracer
+ * /BOT_CAR_SPEED: 2.0
+ * /CAR_COLOR: Black
+ * /CAR_NAME: SteveDR01
+ * /CHANGE_START_POSITION: true
+ * /IS_LANE_CHANGE: true
+ * /JOB_TYPE: TRAINING
+ * /KINESIS_VIDEO_STREAM_NAME: dr-kvs-3720262497...
+ * /LOWER_LANE_CHANGE_TIME: 1.0
+ * /METRICS_S3_BUCKET: aws-deepracer-dat...
+ * /METRICS_S3_OBJECT_KEY: data-0f74113c-c14...
+ * /METRIC_NAME: TrainingRewardScore
+ * /METRIC_NAMESPACE: AWSDeepRacer
+ * /MODEL_METADATA_FILE_S3_KEY: data-0f74113c-c14...
+ * /MP4_S3_BUCKET: aws-deepracer-dat...
+ * /MP4_S3_OBJECT_PREFIX: data-0f74113c-c14...
+ * /NUMBER_OF_BOT_CARS: 1
+ * /NUMBER_OF_EPISODES: 0
+ * /RACE_TYPE: HEAD_TO_HEAD_RACING
+ * /REWARD_FILE_S3_KEY: data-0f74113c-c14...
+ * /ROBOMAKER_SIMULATION_JOB_ACCOUNT_ID: 372026249783
+ * /S3_KMS_CMK_ARN: arn:aws:kms:us-ea...
+ * /SAGEMAKER_SHARED_S3_BUCKET: aws-deepracer-dat...
+ * /SAGEMAKER_SHARED_S3_PREFIX: data-0f74113c-c14...
+ * /SIMTRACE_S3_BUCKET: aws-deepracer-dat...
+ * /SIMTRACE_S3_PREFIX: data-0f74113c-c14...
+ * /TARGET_REWARD_SCORE: None
+ * /TRAINING_JOB_ARN: arn:aws:deepracer...
+ * /UPPER_LANE_CHANGE_TIME: 5.0
+ * /WORLD_NAME: Aragon
