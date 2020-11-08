@@ -11,6 +11,6 @@ CLT
   - complete_model / model_name / training_parametersXXXXX.json
   - complete_model / model_name / eval_parametersXXXXX.json
   - complete_model / model_name / metrics / training / trainingXXXX.json
-- writes out to model_data.json file
-- writes model_data.json file to DynamoDB record
-- retrieves user specified DynamoDB records
+- [x] writes out to model_data.json file
+- [x] writes model_data.json file to DynamoDB record
+- [x] retrieves user specified DynamoDB records
