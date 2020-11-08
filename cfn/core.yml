@@ -3,6 +3,9 @@ Description: Core services for CLI Tool
 
 Resources:
 
+  LambdaSourceBucket:
+    Type: AWS::S3::Bucket
+
   LeaderboardTable: 
       Type: AWS::DynamoDB::Table
       Properties: 
@@ -27,3 +30,13 @@ Resources:
         ProvisionedThroughput: 
           ReadCapacityUnits: 1
           WriteCapacityUnits: 1
+
+Outputs:
+
+  LambdaBucketName:
+    Description: Name of S3 Bucket for Lambda Source
+    Value: !Ref LambdaSourceBucket
+
+  DynamoTableName:
+    Description: Name of DynamoDB table name
+    Value: !Ref LeaderboardTable

@@ -1,0 +1,91 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: AWS Lambda Deployment Stack
+
+Parameters:
+
+  S3SourceBucket:
+    Type: String
+    Description: S3 bucket where Lambda functions source are stored
+
+  DynamoTableName:
+    Type: String
+    Description: Name of DynamoDB table
+
+Resources:
+
+  GetSubmissionsLambda:
+    Type: AWS::Lambda::Function
+    Properties:
+      Description: Gets leaderboard records
+      FunctionName: !Sub ${AWS::StackName}-get-handler
+      Runtime: python3.8
+      Handler: get_submissions.lambda_handler
+      Code:
+        S3Bucket: !Ref S3SourceBucket
+        S3Key: get_submissions.zip
+      Role: !GetAtt LambdaExecutionRole.Arn
+      Timeout: 3
+      MemorySize: 128
+      Environment:
+        Variables:
+          TABLE_NAME: !Sub DynamoTableName
+
+  SubmitLambda:
+    Type: AWS::Lambda::Function
+    Properties:
+      Description: Submit leaderboard record
+      FunctionName: !Sub ${AWS::StackName}-submit-handler
+      Runtime: python3.8
+      Handler: submit.lambda_handler
+      Code:
+        S3Bucket: !Ref S3SourceBucket
+        S3Key: submit.zip
+      Role: !GetAtt LambdaExecutionRole.Arn
+      Timeout: 3
+      MemorySize: 128
+      Environment:
+        Variables:
+          TABLE_NAME: !Sub DynamoTableName
+
+  LambdaExecutionRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: !Sub ${AWS::StackName}-lambda-exec
+      AssumeRolePolicyDocument:
+        Version: 2012-10-17
+        Statement:
+          -
+            Effect: Allow
+            Principal:
+              Service:
+                - lambda.amazonaws.com
+            Action:
+              - sts:AssumeRole
+      Policies:
+        -
+          PolicyName: !Sub ${AWS::StackName}-lambda-policy
+          PolicyDocument:
+            Version: 2012-10-17
+            Statement:
+              -
+                Effect: Allow
+                Action:
+                  - logs:CreateLogGroup
+                  - logs:CreateLogStream
+                  - logs:PutLogEvents
+                Resource:
+                  - arn:aws:logs:*:*:*
+              -
+                Effect: Allow
+                Action:
+                  - dynamodb:BatchGetItem
+                  - dynamodb:BatchWriteItem
+                  - dynamodb:GetItem
+                  - dynamodb:GetRecords
+                  - dynamodb:PutItem
+                  - dynamodb:Query
+                  - dynamodb:Scan
+                Resource:
+                  - arn:aws:dynamodb:*:*:*
+      ManagedPolicyArns:
+      - arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
