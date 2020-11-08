@@ -2,6 +2,7 @@
 CL Tool for Submitting Models and Tracking Performance Leaderboards
 
 
+![Architecture](./img/arch.PNG)
 
 
 CLT
