@@ -17,9 +17,6 @@ Resources:
           - 
             AttributeName: "Metric"
             AttributeType: "S"
-          - 
-            AttributeName: "Value"
-            AttributeType: "N"
         KeySchema: 
           - 
             AttributeName: "Board"

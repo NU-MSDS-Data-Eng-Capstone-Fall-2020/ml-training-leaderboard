@@ -1,28 +1,35 @@
-aws cloudformation create-stack \
+aws cloudformation deploy \
+    --region us-east-1 \
     --stack-name LeaderBoardCoreStack \
-    --template-body file://cfn/core.yml \
+    --no-fail-on-empty-changeset \
+    --template-file ./cfn/core.yml \
     --capabilities CAPABILITY_NAMED_IAM
 
-BUCKET_NAME = $(aws cloudformation describe-stacks \
+BUCKET_NAME=$(aws cloudformation describe-stacks \
+    --region us-east-1 \
     --stack-name LeaderBoardCoreStack \
-    --query "Stacks[0].Outputs[?OutputKey=='DbUrl'].OutputValue" --output text)
+    --query "Stacks[0].Outputs[?OutputKey=='LambdaBucketName'].OutputValue" \
+    --output text)
 
-TABLE_NAME = $(aws cloudformation describe-stacks \
+TABLE_NAME=$(aws cloudformation describe-stacks \
+    --region us-east-1 \
     --stack-name LeaderBoardCoreStack \
-    --query "Stacks[0].Outputs[?OutputKey=='DbUrl'].OutputValue" --output text)
+    --query "Stacks[0].Outputs[?OutputKey=='DynamoTableName'].OutputValue" --output text)
 
-echo $BUCKET_NAME
-echo $TABLE_NAME
+echo "${BUCKET_NAME}"
+echo "${TABLE_NAME}"
 
 zip -r get_submissions.zip lambda
 zip -r submit.zip lambda
 
-aws s3 cp ingest.zip "s3://$BUCKET_NAME/get_submissions.zip"
-aws s3 cp ingest.zip "s3://$BUCKET_NAME/submit.zip"
+aws s3 cp get_submissions.zip "s3://$BUCKET_NAME/get_submissions.zip"
+aws s3 cp submit.zip "s3://$BUCKET_NAME/submit.zip"
 
-aws cloudformation create-stack \
+aws cloudformation deploy \
+    --region us-east-1 \
     --stack-name LeaderBoardLambdaStack \
-    --template-body file://cfn/lambda.yml \
+    --no-fail-on-empty-changeset \
+    --template-file ./cfn/lambda.yml \
     --capabilities CAPABILITY_NAMED_IAM \
-    --parameters ParameterKey=S3SourceBucket,ParameterValue=$BUCKET_NAME \
-                 ParameterKey=DynamoTableName,ParameterValue=$TABLE_NAME
+    --parameter-overrides S3SourceBucket="$BUCKET_NAME" \
+                          DynamoTableName=$TABLE_NAME
