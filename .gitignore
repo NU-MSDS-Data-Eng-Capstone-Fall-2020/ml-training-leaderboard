@@ -130,3 +130,6 @@ dmypy.json
 
 # GitHub Codespaces
 pythonenv*
+
+# Local Lambda zip artifacts
+*.zip
