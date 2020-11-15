@@ -6,6 +6,7 @@ todo:
   - [x] checks: ensure employing COPY of user's data
   - [x] code to enable user to identify their tar file
   - [x] filter hyperparameters to smaller set
+  - [x] ordered dict
   
 outline:
 
