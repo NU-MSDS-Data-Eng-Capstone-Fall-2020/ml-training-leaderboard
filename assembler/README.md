@@ -1,4 +1,4 @@
-todo:
+### todo:
 
   - [x] insert assembler.sh into Makefile
   - [ ] lint, test
@@ -12,7 +12,7 @@ todo:
   - [ ] filter hyperparameters to smaller set
   - [x] ordered dict
   
-outline:
+### outline:
 
   model_data_assembly.py
   - [x] copy users tar data, unzip
