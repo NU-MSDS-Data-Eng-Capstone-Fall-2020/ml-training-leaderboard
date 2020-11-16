@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 import json
+from collections import OrderedDict 
 
 fn = r'model_metadata.json'
 
@@ -33,7 +34,7 @@ def sensors(model_metadata=model_metadata):
     return lidar, camera
 
 def model_dict():
-    model_data = {}
+    model_data = OrderedDict()
     speed_count, speed_max, steer_count, steer_max = action_space()
     lidar, camera = sensors()
     model_data['speed_granularity'] = speed_count

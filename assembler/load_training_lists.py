@@ -11,27 +11,27 @@ def load_json(fn):
 data = load_json(fn)
 
 def training_data(data=data):
-    trials = []
-    episodes = []
-    episode_statuses = []
-    completion_pcts = []
-    reward_scores = []
-    elapsed_times = []
-    metric_times = []
+    trials_train = []
+    episodes_train = []
+    episode_statuses_train = []
+    completion_pcts_train = []
+    reward_scores_train = []
+    elapsed_times_train = []
+    metric_times_train = []
     train_lists = {}
     for i in data['metrics']:
-        trials.append(i["trial"])
-        episodes.append(i["episode"])
-        episode_statuses.append(i["episode_status"])
-        completion_pcts.append(i["completion_percentage"])
-        reward_scores.append(i["reward_score"])
-        elapsed_times.append(i["elapsed_time_in_milliseconds"])
-        metric_times.append(i["metric_time"])
-    train_lists["trials"] = trials
-    train_lists["episodes"] = episodes
-    train_lists["episode_statuses"] = episode_statuses
-    train_lists["completion_pcts"] = completion_pcts
-    train_lists["reward_scores"] = reward_scores
-    train_lists["elapsed_times"] = elapsed_times
-    train_lists["metric_times"] = metric_times 
+        trials_train.append(i["trial"])
+        episodes_train.append(i["episode"])
+        episode_statuses_train.append(i["episode_status"])
+        completion_pcts_train.append(i["completion_percentage"])
+        reward_scores_train.append(i["reward_score"])
+        elapsed_times_train.append(i["elapsed_time_in_milliseconds"])
+        metric_times_train.append(i["metric_time"])
+    train_lists["trials_train"] = trials_train
+    train_lists["episodes_train"] = episodes_train
+    train_lists["episode_statuses_train"] = episode_statuses_train
+    train_lists["completion_pcts_train"] = completion_pcts_train
+    train_lists["reward_scores_train"] = reward_scores_train
+    train_lists["elapsed_times_train"] = elapsed_times_train
+    train_lists["metric_times_train"] = metric_times_train
     return train_lists

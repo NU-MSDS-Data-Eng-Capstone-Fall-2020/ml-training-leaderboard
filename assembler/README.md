@@ -18,48 +18,55 @@ outline:
   - [x] call evaluation_data module
 
 
-item
+###source file, item, data type (integer if not noted)
 
-speed_granularity
-speed_max
-steer_granularity
-steer_max
-lidar
-camera
+model_data.json:
+- speed_granularity
+- speed_max
+- steer_granularity
+- steer_max
+- lidar
+- camera
 
-hyperparameters:
+hyperparameters.json:
 - batch_size
-- beta_entropy
-- discount_factor
-- e_greedy_value
+- beta_entropy - f
+- discount_factor - f
+- e_greedy_value - f
 - epsilon_steps
-- exploration_type
-- loss_type
-- lr
+- exploration_type - s
+- loss_type - s
+- lr - f
 - num_episodes_between_training
 - num_epochs
 - stack_size
-- term_cond_avg_score
-- term_cond_max_episodes
+- term_cond_avg_score - f
+- term_cond_max_episodes - f
 
-training_params:
+training_params.yaml (all except episodes_train are string):
 - car_name_train
-track_train
-episodes_train
-model_name_eval
-racer_name_eval
-track_eval
-trials_train
-episode_statuses_train
-completion_pcts_train
-reward_scores_train
-elapsed_times_train
-metric_times_train
-trials_eval
-episode_statuses_eval
-completion_pcts_eval
-reset_counts_eval
-crash_counts_eval
-off_track_counts_eval
-elapsed_times_eval
-metric_times_eval
+- track_train
+- episodes_train
+
+eval_params.yaml (all string):
+- model_name_eval
+- racer_name_eval
+- track_eval
+
+training.json (all list type):
+- trials_train
+- episode_statuses_train
+- completion_pcts_train
+- reward_scores_train
+- elapsed_times_train
+- metric_times_train
+
+evaluation.json (all list type):
+- trials_eval
+- episode_statuses_eval
+- completion_pcts_eval
+- reset_counts_eval
+- crash_counts_eval
+- off_track_counts_eval
+- elapsed_times_eval
+- metric_times_eval
