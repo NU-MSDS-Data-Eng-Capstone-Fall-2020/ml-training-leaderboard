@@ -6,10 +6,10 @@ todo:
   - [ ] checks: ensure employing COPY of user's data
   - [ ] code to enable user to identify their tar file
   - [ ] filter hyperparameters to smaller set
-  - [x] checks: train = eval track e.g.
-  - [x] checks: ensure employing COPY of user's data
-  - [x] code to enable user to identify their tar file
-  - [x] filter hyperparameters to smaller set
+  - [ ] checks: train = eval track e.g.
+  - [ ] checks: ensure employing COPY of user's data
+  - [ ] code to enable user to identify their tar file
+  - [ ] filter hyperparameters to smaller set
   - [x] ordered dict
   
 outline:
