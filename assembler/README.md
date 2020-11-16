@@ -2,10 +2,17 @@ todo:
 
   - [x] insert assembler.sh into Makefile
   - [ ] lint, test
+<<<<<<< HEAD
   - [ ] checks: train = eval track e.g.
   - [ ] checks: ensure employing COPY of user's data
   - [ ] code to enable user to identify their tar file
   - [ ] filter hyperparameters to smaller set
+=======
+  - [x] checks: train = eval track e.g.
+  - [x] checks: ensure employing COPY of user's data
+  - [x] code to enable user to identify their tar file
+  - [x] filter hyperparameters to smaller set
+>>>>>>> c4d22023f3d39da39183ec8f9de73be907a797fb
   - [x] ordered dict
   
 outline:

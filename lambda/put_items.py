@@ -43,3 +43,6 @@ dynamodb.put_item(TableName='SpeedRacer',
     "elapsed_time_in_milliseconds_eval": [list, of, elapsed, time, values],
     "completion_percentage_eval": [list, of, completion, percentage, values]})
     
+def lambda_handler(event, context):
+    pass
+
