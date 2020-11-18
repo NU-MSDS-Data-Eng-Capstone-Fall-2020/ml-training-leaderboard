@@ -33,3 +33,15 @@ aws cloudformation deploy \
     --capabilities CAPABILITY_NAMED_IAM \
     --parameter-overrides S3SourceBucket="$BUCKET_NAME" \
                           DynamoTableName=$TABLE_NAME
+
+aws lambda update-function-code \
+    --region us-east-1 \
+    --function-name LeaderBoardLambdaStack-get-handler \
+    --s3-bucket "$BUCKET_NAME" \
+    --s3-key "get_submissions.zip"
+
+aws lambda update-function-code \
+    --region us-east-1 \
+    --function-name LeaderBoardLambdaStack-submit-handler \
+    --s3-bucket "$BUCKET_NAME" \
+    --s3-key "submit.zip"
