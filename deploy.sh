@@ -19,8 +19,8 @@ TABLE_NAME=$(aws cloudformation describe-stacks \
 echo "${BUCKET_NAME}"
 echo "${TABLE_NAME}"
 
-zip -r get_submissions.zip lambda
-zip -r submit.zip lambda
+zip -r -j get_submissions.zip lambda
+zip -r -j submit.zip lambda
 
 aws s3 cp get_submissions.zip "s3://$BUCKET_NAME/get_submissions.zip"
 aws s3 cp submit.zip "s3://$BUCKET_NAME/submit.zip"
