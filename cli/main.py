@@ -2,6 +2,7 @@
 
 import boto3
 import click
+# import prettytable  need to use this for printing
 
 
 @click.command(name="submit")
