@@ -80,7 +80,7 @@ evaluation.json (all list type):
 
 Logs appear mostly useless, but are only source of hyperparameters.
 
-### One top folder with name <your model name>-model
+### One top folder with name "<your model name>"-model
 
 LEADERBOARD data
 <your model name>-model
