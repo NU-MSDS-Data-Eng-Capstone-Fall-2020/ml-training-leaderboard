@@ -28,7 +28,7 @@ Resources:
       MemorySize: 128
       Environment:
         Variables:
-          TABLE_NAME: !Sub DynamoTableName
+          TABLE_NAME: !Sub ${DynamoTableName}
 
   SubmitLambda:
     Type: AWS::Lambda::Function
@@ -45,7 +45,7 @@ Resources:
       MemorySize: 128
       Environment:
         Variables:
-          TABLE_NAME: !Sub DynamoTableName
+          TABLE_NAME: !Sub ${DynamoTableName}
 
   LambdaExecutionRole:
     Type: AWS::IAM::Role

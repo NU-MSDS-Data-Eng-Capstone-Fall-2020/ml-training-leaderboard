@@ -19,8 +19,8 @@ TABLE_NAME=$(aws cloudformation describe-stacks \
 echo "${BUCKET_NAME}"
 echo "${TABLE_NAME}"
 
-zip -r get_submissions.zip lambda
-zip -r submit.zip lambda
+zip -r -j get_submissions.zip lambda
+zip -r -j submit.zip lambda
 
 aws s3 cp get_submissions.zip "s3://$BUCKET_NAME/get_submissions.zip"
 aws s3 cp submit.zip "s3://$BUCKET_NAME/submit.zip"
@@ -33,3 +33,15 @@ aws cloudformation deploy \
     --capabilities CAPABILITY_NAMED_IAM \
     --parameter-overrides S3SourceBucket="$BUCKET_NAME" \
                           DynamoTableName=$TABLE_NAME
+
+aws lambda update-function-code \
+    --region us-east-1 \
+    --function-name LeaderBoardLambdaStack-get-handler \
+    --s3-bucket "$BUCKET_NAME" \
+    --s3-key "get_submissions.zip"
+
+aws lambda update-function-code \
+    --region us-east-1 \
+    --function-name LeaderBoardLambdaStack-submit-handler \
+    --s3-bucket "$BUCKET_NAME" \
+    --s3-key "submit.zip"

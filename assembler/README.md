@@ -1,4 +1,4 @@
-todo:
+### todo:
 
   - [x] insert assembler.sh into Makefile
   - [ ] lint, test
@@ -12,7 +12,7 @@ todo:
   - [ ] filter hyperparameters to smaller set
   - [x] ordered dict
   
-outline:
+### outline:
 
   model_data_assembly.py
   - [x] copy users tar data, unzip
@@ -22,7 +22,7 @@ outline:
   - [x] call evaluation_data module
 
 
-###source file, item, data type (integer if not noted)
+### source file, item, data type (integer if not noted)
 
 model_data.json:
 - speed_granularity

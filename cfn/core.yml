@@ -12,17 +12,17 @@ Resources:
         TableName: LeaderboardTable
         AttributeDefinitions: 
           - 
-            AttributeName: "Board"
+            AttributeName: "Track"
             AttributeType: "S"
           - 
-            AttributeName: "Metric"
+            AttributeName: "Person"
             AttributeType: "S"
         KeySchema: 
           - 
-            AttributeName: "Board"
+            AttributeName: "Track"
             KeyType: "HASH"
           - 
-            AttributeName: "Metric"
+            AttributeName: "Person"
             KeyType: "RANGE"
         ProvisionedThroughput: 
           ReadCapacityUnits: 1
