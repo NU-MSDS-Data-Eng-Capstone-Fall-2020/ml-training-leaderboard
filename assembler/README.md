@@ -116,11 +116,11 @@ Logs appear mostly useless, but are only source of hyperparameters.
 
     logs
         training
-            "training-<14 digit date time>-<22 character URL-base64 encoding without padding**>-sagemaker.log
-            "training-<14 digit date time>-<22 character URL-base64 encoding without padding**>-robomaker.log
+            "training-<14 digit date time>-<22 character URL>-sagemaker.log
+            "training-<14 digit date time>-<22 character URL>-robomaker.log
     metrics
         training
-            training-<14 digit date time>-<22 character URL-base64 encoding without padding**>.json
+            training-<14 digit date time>-<22 character URL>.json
                 {metrics: [{
                     {
                     metric_time: integer,
@@ -140,7 +140,7 @@ Logs appear mostly useless, but are only source of hyperparameters.
                     ]
     sim-trace
         training
-            <14 digit date time>-<22 character URL-base64 encoding without padding**>
+            <14 digit date time>-<22 character URL>
                 training-simtrace
                     0-iteration.csv (rows = episodes * steps)
                         episode
@@ -171,10 +171,10 @@ Logs appear mostly useless, but are only source of hyperparameters.
 
     logs
         evaluation
-            "evaluation-<14 digit date time>-<22 character URL-base64 encoding without padding**>-robomaker.log
+            "evaluation-<14 digit date time>-<22 character URL>-robomaker.log
     metrics
         evaluation
-            evaluation-<14 digit date time>-<22 character URL-base64 encoding without padding**>.json
+            evaluation-<14 digit date time>-<22 character URL>.json
                 {metrics: [{
                     {
                     completion_percentage: integer,
@@ -196,7 +196,7 @@ Logs appear mostly useless, but are only source of hyperparameters.
                     ]
     sim-trace
         evaluation
-            <14 digit date time>-<22 character URL-base64 encoding without padding**>
+            <14 digit date time>-<22 character URL>
                 training-simtrace
                     0-iteration.csv
                         episode
@@ -229,9 +229,6 @@ Logs appear mostly useless, but are only source of hyperparameters.
         leaderboard
             "evaluation-<14 digit date time>-<22 character URL-base64 encoding without padding**>-robomaker.log
 
-
-
-
-
-** https://security.stackexchange.com/questions/194092/what-encryption-algorithm-outputs-22-characters-string
+** the 22 character URL is base64 encoding without padding as suggested by this link:
+https://security.stackexchange.com/questions/194092/what-encryption-algorithm-outputs-22-characters-string
 
