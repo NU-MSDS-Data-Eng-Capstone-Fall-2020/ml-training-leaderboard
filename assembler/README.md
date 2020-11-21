@@ -74,3 +74,114 @@ evaluation.json (all list type):
 - off_track_counts_eval
 - elapsed_times_eval
 - metric_times_eval
+
+
+## 3 new file trees downloadable from AWS DR
+
+### 3 identically named top folders <your model name> in quotes with data components inside:
+
+<your model name>
+
+    logs
+        leaderboard
+            "evaluation-<14 digit date time>-<22 character URL-base64 encoding without padding**>-robomaker.log
+
+<your model name>
+
+    logs
+        evaluation
+            "evaluation-<14 digit date time>-<22 character URL-base64 encoding without padding**>-robomaker.log
+    metrics
+        evaluation
+            evaluation-<14 digit date time>-<22 character URL-base64 encoding without padding**>.json
+                completion_percentage
+                immobilized_count
+                off_track_count
+                elapsed_time_in_milliseconds
+                episode_status
+                metric_time
+                reset_count
+                reversed_count
+                crash_count
+                start_time
+                trial
+    sim-trace
+        evaluation
+            <14 digit date time>-<22 character URL-base64 encoding without padding**>
+                evaluation-simtrace
+                    0-iteration.csv
+                        episode
+                        steps
+                        X
+                        Y
+                        yaw
+                        steer
+                        throttle
+                        action
+                        reward
+                        done
+                        all_wheels_on_track
+                        progress
+                        closest_waypoint
+                        track_len
+                        tstamp
+                        episode_status
+    
+<your model name>
+
+    logs
+        evaluation
+            "evaluation-<14 digit date time>-<22 character URL-base64 encoding without padding**>-robomaker.log
+    metrics
+        evaluation
+            evaluation-<14 digit date time>-<22 character URL-base64 encoding without padding**>.json
+                {metrics: [{
+                    {
+                    completion_percentage: integer,
+                    immobilized_count: integer,
+                    off_track_count: integer,
+                    elapsed_time_in_milliseconds: integer,
+                    episode_status: integer,
+                    metric_time: integer,
+                    reset_count: integer,
+                    reversed_count: integer,
+                    crash_count: integer,
+                    start_time: integer,
+                    trial: integer,
+                    },
+                    {
+                    repeat
+                    }
+                    ]
+    sim-trace
+        training
+            <14 digit date time>-<22 character URL-base64 encoding without padding**>
+                training-simtrace
+                    0-iteration.csv
+                        episode
+                        steps
+                        X
+                        Y
+                        yaw
+                        steer
+                        throttle
+                        action
+                        reward
+                        done
+                        all_wheels_on_track
+                        progress
+                        closest_waypoint
+                        track_len
+                        tstamp
+                        episode_status
+                    1-iteration.csv
+                    2-iteration.csv
+                    ...
+                    7-iteration.csv
+
+
+
+
+
+** https://security.stackexchange.com/questions/194092/what-encryption-algorithm-outputs-22-characters-string
+
