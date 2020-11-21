@@ -2,15 +2,12 @@
 
 import json
 
-fn = r'training.json'
+fn = 'training-20201120183444-zXDFsVSeQd2raLaDn-qgHw.json'
 
-def load_json(fn):
+def get_dict(fn=fn):
     with open(fn) as fin:
-        return(json.load(fin))
+        read_data = json.load(fin)
 
-data = load_json(fn)
-
-def training_data(data=data):
     trials_train = []
     episodes_train = []
     episode_statuses_train = []
@@ -19,7 +16,7 @@ def training_data(data=data):
     elapsed_times_train = []
     metric_times_train = []
     train_lists = {}
-    for i in data['metrics']:
+    for i in read_data['metrics']:
         trials_train.append(i["trial"])
         episodes_train.append(i["episode"])
         episode_statuses_train.append(i["episode_status"])

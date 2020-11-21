@@ -3,7 +3,9 @@
 import json
 from collections import OrderedDict 
 
-fn = r'model_metadata.json'
+# https://wiki.deepracing.io/Customise_Local_Training
+
+fn = 'model_metadata.json'
 
 def load(fn):
     with open(fn) as fin:
@@ -25,15 +27,17 @@ def action_space(model_metadata=model_metadata):
     return speed_count, speed_max, steer_count, steer_max
 
 def sensors(model_metadata=model_metadata):
-    if 'SECTOR_LIDAR' in model_metadata['sensor']:
+    if 'LIDAR' in model_metadata['sensor']:
         lidar = 1
+    else:
+        lidar = 0
     if 'STEREO_CAMERAS' in model_metadata['sensor']:
         camera = 1
     elif 'STEREO_CAMERAS' not in model_metadata['sensor']:
         camera = 0
     return lidar, camera
 
-def model_dict():
+def get_dict():
     model_data = OrderedDict()
     speed_count, speed_max, steer_count, steer_max = action_space()
     lidar, camera = sensors()

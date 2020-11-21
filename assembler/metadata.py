@@ -2,11 +2,13 @@
 
 import json
 
-# copy leaderboard-20201120195415-Yv9spFcSTlGFM_PsC_5wBg-robomaker.log to temp.log
+# fn = 'training-20201120191008-zXDFsVSeQd2raLaDn-qgHw-robomaker.log'
+# fn = 'evaluation-20201120192312-zORIzXAWSCq3YvAyajkrPA-robomaker.log'
+# fn = 'leaderboard-20201120195415-Yv9spFcSTlGFM_PsC_5wBg-robomaker.log'
 
-def get_dict(leaderboard_robomaker_log):
-    with open ('temp.log') as f:
-        read_data = f.read()
+def get_dict(fn=fn):
+    with open (fn) as fin:
+        read_data = fin.read()
 
     start = read_data.index("{'METRICS_S3_BUCKET")
     finish = start + 2000

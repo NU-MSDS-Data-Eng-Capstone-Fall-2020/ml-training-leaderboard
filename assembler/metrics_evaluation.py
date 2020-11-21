@@ -2,15 +2,11 @@
 
 import json
 
-fn = r'evaluation.json'
+fn = 'evaluation-20201120191752-zORIzXAWSCq3YvAyajkrPA.json'
 
-def load_json(fn):
+def get_dict(fn=fn):
     with open(fn) as fin:
-        return(json.load(fin))
-
-data = load_json(fn)
-
-def evaluation_data(data=data):
+        read_data = json.load(fin)
     trials_eval = []
     episode_statuses_eval = []
     completion_pcts_eval = []
@@ -20,7 +16,7 @@ def evaluation_data(data=data):
     elapsed_times_eval = []
     metric_times_eval = []
     evaluation_lists = {}
-    for i in data['metrics']:
+    for i in read_data['metrics']:
         trials_eval.append(i["trial"])
         episode_statuses_eval.append(i["episode_status"])
         completion_pcts_eval.append(i["completion_percentage"])

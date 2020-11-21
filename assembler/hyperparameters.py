@@ -2,11 +2,13 @@
 
 import json
 
-# copy training-20201120191007-zXDFsVSeQd2raLaDn-qgHw-sagemaker.log to temp.log
+# fn = 'training-20201120191008-zXDFsVSeQd2raLaDn-qgHw-robomaker.log'
+# fn = 'evaluation-20201120192312-zORIzXAWSCq3YvAyajkrPA-robomaker.log'
+# fn = 'leaderboard-20201120195415-Yv9spFcSTlGFM_PsC_5wBg-robomaker.log'
 
-def get_dict(training_log_file):
-    with open ('s.log') as f:
-        read_data = f.read()
+def get_dict(fn=fn):
+    with open (fn) as fin:
+        read_data = fin.read()
 
     start = read_data.index('following hyper-parameters')
     finish = start + 600
