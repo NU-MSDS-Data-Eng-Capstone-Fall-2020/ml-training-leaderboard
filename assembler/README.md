@@ -76,40 +76,75 @@ evaluation.json (all list type):
 - metric_times_eval
 
 
-## 3 new file trees downloadable from AWS DR
+## Four folders are downloadable from AWS DR: here are their file trees
 
-### 3 identically named top folders <your model name> in quotes with data components inside:
+Logs appear mostly useless, but are only source of hyperparameters.
 
-<your model name>
+### One top folder with name "<your model name>-model"
+
+<your model name>-model         <-- call this LEADERBOARD data
+
+    agent
+        model.pb
+    model_metadata.json
+        {
+        action_space: [
+            {
+            steering_angle: integer,
+            speed: float
+            index: integer
+            },
+            {
+            repeat
+            }
+            repeat...
+            ],
+        sensor: [ string ]
+        neural_network: string
+        version: integer
+        }
+    worker_0.multi_agent_graph_0.json
+    worker_0.multi_agent_graph.main_level.main_level.agent_0.csv
+
+### Three folders with identical names "<your model name>" are downloadable:
+
+<your model name>                    <-- call this LEADERBOARD data
 
     logs
         leaderboard
             "evaluation-<14 digit date time>-<22 character URL-base64 encoding without padding**>-robomaker.log
 
-<your model name>
+<your model name>                    <-- call this TRAINING data
 
     logs
-        evaluation
-            "evaluation-<14 digit date time>-<22 character URL-base64 encoding without padding**>-robomaker.log
+        training
+            "training-<14 digit date time>-<22 character URL-base64 encoding without padding**>-sagemaker.log
+            "training-<14 digit date time>-<22 character URL-base64 encoding without padding**>-robomaker.log
     metrics
-        evaluation
-            evaluation-<14 digit date time>-<22 character URL-base64 encoding without padding**>.json
-                completion_percentage
-                immobilized_count
-                off_track_count
-                elapsed_time_in_milliseconds
-                episode_status
-                metric_time
-                reset_count
-                reversed_count
-                crash_count
-                start_time
-                trial
+        training
+            training-<14 digit date time>-<22 character URL-base64 encoding without padding**>.json
+                {metrics: [{
+                    {
+                    metric_time: integer,
+                    trial: integer,
+                    episode_status: string,
+                    reward_score, integer
+                    completion_percentage: integer,
+                    elapsed_time_in_milliseconds: integer,
+                    start_time: integer,
+                    episode: integer,
+                    phase: string
+                    },
+                    {
+                    repeat
+                    }
+                    repeat ...
+                    ]
     sim-trace
-        evaluation
+        training
             <14 digit date time>-<22 character URL-base64 encoding without padding**>
-                evaluation-simtrace
-                    0-iteration.csv
+                training-simtrace
+                    0-iteration.csv (rows = episodes * steps)
                         episode
                         steps
                         X
@@ -126,8 +161,14 @@ evaluation.json (all list type):
                         track_len
                         tstamp
                         episode_status
+                    1-iteration.csv
+                        repeat
+                    2-iteration.csv
+                    repeat ...
+                    7-iteration.csv
+
     
-<your model name>
+<your model name>                    <-- call this EVALUATION data
 
     logs
         evaluation
@@ -141,7 +182,7 @@ evaluation.json (all list type):
                     immobilized_count: integer,
                     off_track_count: integer,
                     elapsed_time_in_milliseconds: integer,
-                    episode_status: integer,
+                    episode_status: string,
                     metric_time: integer,
                     reset_count: integer,
                     reversed_count: integer,
@@ -152,9 +193,10 @@ evaluation.json (all list type):
                     {
                     repeat
                     }
+                    repeat ...
                     ]
     sim-trace
-        training
+        evaluation
             <14 digit date time>-<22 character URL-base64 encoding without padding**>
                 training-simtrace
                     0-iteration.csv
@@ -175,8 +217,9 @@ evaluation.json (all list type):
                         tstamp
                         episode_status
                     1-iteration.csv
+                        repeat
                     2-iteration.csv
-                    ...
+                    repeat ...
                     7-iteration.csv
 
 
