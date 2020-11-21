@@ -82,7 +82,7 @@ Logs appear mostly useless, but are only source of hyperparameters.
 
 ### One top folder with name [your model name]-model
 
-LEADERBOARD data
+LEADERBOARD data\n
 [your model name]-model
 
     agent
