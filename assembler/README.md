@@ -110,15 +110,7 @@ Logs appear mostly useless, but are only source of hyperparameters.
 
 ### Three folders with identical names [your model name] are downloadable:
 
-2. LEADERBOARD data
-
-[your model name]
-
-    logs
-        leaderboard
-            "evaluation-<14 digit date time>-<22 character URL-base64 encoding without padding**>-robomaker.log
-
-3. TRAINING data
+2. TRAINING data
 
 [your model name]
 
@@ -173,7 +165,7 @@ Logs appear mostly useless, but are only source of hyperparameters.
                     repeat ...
                     7-iteration.csv
 
-4. EVALUATION data
+3. EVALUATION data
 
 [your model name]
 
@@ -228,6 +220,14 @@ Logs appear mostly useless, but are only source of hyperparameters.
                     2-iteration.csv
                     repeat ...
                     7-iteration.csv
+
+4. LEADERBOARD data
+
+[your model name]
+
+    logs
+        leaderboard
+            "evaluation-<14 digit date time>-<22 character URL-base64 encoding without padding**>-robomaker.log
 
 
 
