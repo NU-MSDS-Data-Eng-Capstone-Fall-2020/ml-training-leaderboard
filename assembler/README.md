@@ -80,9 +80,10 @@ evaluation.json (all list type):
 
 Logs appear mostly useless, but are only source of hyperparameters.
 
-### One top folder with name "<your model name>-model"
+### One top folder with name <your model name>-model
 
-<your model name>-model         <-- call this LEADERBOARD data
+LEADERBOARD data
+<your model name>-model
 
     agent
         model.pb
@@ -108,13 +109,15 @@ Logs appear mostly useless, but are only source of hyperparameters.
 
 ### Three folders with identical names "<your model name>" are downloadable:
 
-<your model name>                    <-- call this LEADERBOARD data
+LEADERBOARD data
+<your model name>
 
     logs
         leaderboard
             "evaluation-<14 digit date time>-<22 character URL-base64 encoding without padding**>-robomaker.log
 
-<your model name>                    <-- call this TRAINING data
+TRAINING data
+<your model name>
 
     logs
         training
@@ -167,8 +170,8 @@ Logs appear mostly useless, but are only source of hyperparameters.
                     repeat ...
                     7-iteration.csv
 
-    
-<your model name>                    <-- call this EVALUATION data
+EVALUATION data
+<your model name>
 
     logs
         evaluation
