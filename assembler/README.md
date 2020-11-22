@@ -69,25 +69,27 @@
 #### evaluation data:
 - via tkinter finder window guides user to point to file path as follows:
 
-    ```[your model name] / logs / evaluation / evaluation-<14 digit date time>-<22 character URL>-robomaker.log```
+    ```[your model name]/logs/evaluation/evaluation-<14 digit date time>-<22 character URL>-robomaker.log```
 - code confirms that the file path:
     - [x] includes ```evaluation``` 
     - [x] ends in ```*.log```
 - automatically finds metrics (aka results) path at:
 
-    ```[your model name] / metrics / evaluation / evaluation-<14 digit date time>-<22 character URL>.json```
+    ```[your model name]/metrics/evaluation/evaluation-<14 digit date time>-<22 character URL>.json```
 - returns via:
 
     ```path_logs_evaluation, path_evaluation_results = path.finder('evaluation’)```
 
-    leaderboard data:
-        via tkinter finder window guides user to point to file path as follows
-            ```[your model name] / logs / training / training-<14 digit date time>-<22 character URL>-robomaker.log```
-        code confirms that the file path:
-            includes ```leaderboard```
-            ends in ```*.log```
-        returns via: 
-            ```path_logs_leaderboard = path.finder('leaderboard’)```
+#### leaderboard data:
+- via tkinter finder window guides user to point to file path as follows:
+
+    ```[your model name]/logs/training/training-<14 digit date time>-<22 character URL>-robomaker.log```
+- code confirms that the file path:
+    - [x] includes ```leaderboard```
+    - x] ends in ```*.log```
+- returns via: 
+
+    ```path_logs_leaderboard = path.finder('leaderboard’)```
 
 
 ## source file, item, data type (integer if not noted)
