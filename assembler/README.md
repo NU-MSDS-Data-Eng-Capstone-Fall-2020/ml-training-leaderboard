@@ -2,7 +2,7 @@
 
   - [ ] lint, test
   - [x] checks: train = eval track e.g.
-  - [x ] code to enable user to identify path to file
+  - [x] code to enable user to identify path to file
   - [ ] filter hyperparameters to smaller set
   - [ ] ensure: train = eval track e.g.
   
@@ -10,8 +10,8 @@
 
   model_data_assembly.py
   - [x] import modules that get
-        - [x] metadata of model
-        - [x] 
+    - [x] metadata of model
+    - [x] 
   - [x] copy users tar data, unzip
   - [x] load hyperparameters.json directly wholely; can be more selective.
   - [x] load training_params.yaml and from there selected items.
