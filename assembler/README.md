@@ -1,20 +1,17 @@
 ### todo:
 
-  - [x] insert assembler.sh into Makefile
   - [ ] lint, test
-  - [ ] checks: train = eval track e.g.
-  - [ ] checks: ensure employing COPY of user's data
-  - [ ] code to enable user to identify their tar file
+  - [x] checks: train = eval track e.g.
+  - [x ] code to enable user to identify path to file
   - [ ] filter hyperparameters to smaller set
-  - [ ] checks: train = eval track e.g.
-  - [ ] checks: ensure employing COPY of user's data
-  - [ ] code to enable user to identify their tar file
-  - [ ] filter hyperparameters to smaller set
-  - [x] ordered dict
+  - [ ] ensure: train = eval track e.g.
   
 ### outline:
 
   model_data_assembly.py
+  - [x] import modules that get
+        [x] metadata of model
+        [x] 
   - [x] copy users tar data, unzip
   - [x] load hyperparameters.json directly wholely; can be more selective.
   - [x] load training_params.yaml and from there selected items.
