@@ -1,4 +1,4 @@
-### todo:
+## todo:
 
   - [ ] lint, test
   - [x] checks: train = eval track e.g.
@@ -6,17 +6,22 @@
   - [ ] filter hyperparameters to smaller set
   - [ ] ensure: train = eval track e.g.
   
-### outline:
+## outline:
 
-  model_data_assembly.py
-  - [x] import modules that get
-    - [x] metadata of model
-    - [x] 
-  - [x] copy users tar data, unzip
-  - [x] load hyperparameters.json directly wholely; can be more selective.
-  - [x] load training_params.yaml and from there selected items.
-  - [x] call training_data module
-  - [x] call evaluation_data module
+###  model_data_assembly.py
+  - [x] import modules that get:
+    - [x] metadata of model,
+    - [x] hyperparameters of model,
+    - [x] metadata from training, evaluation, leaderboard stages, 
+    - [x] results from training, evaluation.
+  - [x] get paths to 1 model file, 2 training files, 2 evaluation files and 1 leaderboard file.
+  - [x] make ordered dict "model_data" from metadata of the model.
+  - [x] add hyperparameters to "model_data".
+  - [x] add metadata from training stage to "model_data"
+  - [x] add metadata from evaluation stage to "model_data"
+  - [x] add metadata from leaderboard stage to "model_data"
+  - [x] add results from training to "model_data"
+  - [x] add results from evaluation to "model_data"
 
 
 ### source file, item, data type (integer if not noted)

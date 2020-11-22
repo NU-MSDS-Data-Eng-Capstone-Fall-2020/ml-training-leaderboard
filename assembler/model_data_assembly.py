@@ -37,13 +37,13 @@ def make_dict():
     racer_name_same = metadata_evaluation["RACER_NAME"] == metadata_leaderboard["RACER_NAME"]
     race_type_same = metadata_leaderboard["RACE_TYPE"] == metadata_training["RACE_TYPE"] == "TIME_TRIAL"
 
-    training_results = results_training.get_dict(path_training_results)
-    for i in training_results.keys():
-        model_data[i] = training_results[i]
+    results_training_dict = results_training.get_dict(path_training_results)
+    for i in results_training_dict.keys():
+        model_data[i] = results_training_dict[i]
 
-    evaluation_results = results_evaluation.get_dict(path_evaluation_results)
-    for i in evaluation_results.keys():
-        model_data[i] = evaluation_results[i]
+    results_evaluation_dict = results_evaluation.get_dict(path_evaluation_results)
+    for i in results_evaluation_dict.keys():
+        model_data[i] = results_evaluation_dict[i]
 
     return model_data
 
