@@ -26,11 +26,11 @@ def get_dict(fn):
         elapsed_times_train.append(i["elapsed_time_in_milliseconds"])
         episodes_train.append(i["episode"])
     
-    train_lists["metric_times_train"] = metric_times_train
     train_lists["trials_train"] = trials_train
-    train_lists["episode_statuses_train"] = episode_statuses_train
-    train_lists["reward_scores_train"] = reward_scores_train
-    train_lists["completion_pcts_train"] = completion_pcts_train
-    train_lists["elapsed_times_train"] = elapsed_times_train
     train_lists["episodes_train"] = episodes_train
+    train_lists["episode_statuses_train"] = episode_statuses_train
+    train_lists["completion_pcts_train"] = completion_pcts_train
+    train_lists["reward_scores_train"] = reward_scores_train
+    train_lists["elapsed_times_train"] = elapsed_times_train
+    train_lists["metric_times_train"] = metric_times_train
     return train_lists

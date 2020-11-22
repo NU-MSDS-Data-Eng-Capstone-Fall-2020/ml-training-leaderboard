@@ -142,11 +142,11 @@
 
 **results from evaluation** from the ```[your model name]/metrics/evaluation/evaluation-*-*.json``` file are in the form of a dict of list of ```i```, ```f```, or ```s``` from all evaluation epsisodes:
 - trials_eval ```list of i```
-- completion_pcts_eval ```list of i```
 - episode_statuses_eval ```list of s```
 - reset_counts_eval ```list of i```
 - crash_counts_eval ```list of i```
 - off_track_counts_eval ```list of i```
+- completion_pcts_eval ```list of i```
 - elapsed_times_eval ```list of i```
 - metric_times_eval ```list of i```
 
