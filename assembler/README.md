@@ -36,46 +36,48 @@
   
   Uses ```tkinter``` package, which is the standard Python interface to the ```Tk``` GUI toolkit, to let the user open a finder window with a title guiding the user to find and select the needed file in their file system.  This module ensures the user only selects required file type (```*.log``` or ```*.json``` depending on the situation), ensures that the user selects a ```robomaker.log``` and not ```sagemaker.log``` file, ensures the user only selects ```training``` or ```evaluation``` or ```leaderboard``` file when requested.  If user fails in this regard, the finder window pops up again to let the user try again.  The function returns a path to the desired file.  For training, evaluation and leaderboard files, a ```*.log``` file is found by the user and the module uses this path to find a ```.json``` file and that path is returned as well.  Here's the specifics:
 
-model data:
-    via tkinter finder window guides user to point to file path as follows:
-        ```[your model name]-model / model_metadata.json```
-    code confirms that the file path:
-        includes ```model```
-        ends in ```*.json```
-    returns via:
-        ```path_metadata_model = path.finder('model’)```
+    model data:
+    
+        via tkinter finder window guides user to point to file path as follows:
+            ```[your model name]-model / model_metadata.json```
+        code confirms that the file path:
+            includes ```model```
+            ends in ```*.json```
+        returns via:
+            ```path_metadata_model = path.finder('model’)```
 
-training data:
-    via tkinter finder window guides user to point to file path as follows:
-        ```[your model name] / logs / training / training-<14 digit date time>-<22 character URL>-robomaker.log```
-    code confirms that the file path:
-        includes ```training```
-        ends in ```*.log```
-        does not include ```sagemaker```
-    automatically finds metrics (aka results) path at:
-        ```[your model name] / metrics / training / training-<14 digit date time>-<22 character URL>.json```
-    returns via:
-        ```path_logs_training, path_training_results = path.finder('training’)```
+    training data:
+    
+        via tkinter finder window guides user to point to file path as follows:
+            ```[your model name] / logs / training / training-<14 digit date time>-<22 character URL>-robomaker.log```
+        code confirms that the file path:
+            includes ```training```
+            ends in ```*.log```
+            does not include ```sagemaker```
+        automatically finds metrics (aka results) path at:
+            ```[your model name] / metrics / training / training-<14 digit date time>-<22 character URL>.json```
+        returns via:
+            ```path_logs_training, path_training_results = path.finder('training’)```
 
-evaluation data:
-    via tkinter finder window guides user to point to file path as follows:
-        ```[your model name] / logs / evaluation / evaluation-<14 digit date time>-<22 character URL>-robomaker.log```
-    code confirms that the file path:
-        includes ```evaluation``` 
-        ends in ```*.log```
-    automatically finds metrics (aka results) path at:
-        ```[your model name] / metrics / evaluation / evaluation-<14 digit date time>-<22 character URL>.json```
-    returns via:
-        ```path_logs_evaluation, path_evaluation_results = path.finder('evaluation’)```
+    evaluation data:
+        via tkinter finder window guides user to point to file path as follows:
+            ```[your model name] / logs / evaluation / evaluation-<14 digit date time>-<22 character URL>-robomaker.log```
+        code confirms that the file path:
+            includes ```evaluation``` 
+            ends in ```*.log```
+        automatically finds metrics (aka results) path at:
+            ```[your model name] / metrics / evaluation / evaluation-<14 digit date time>-<22 character URL>.json```
+        returns via:
+            ```path_logs_evaluation, path_evaluation_results = path.finder('evaluation’)```
 
-leaderboard data:
-    via tkinter finder window guides user to point to file path as follows
-        ```[your model name] / logs / training / training-<14 digit date time>-<22 character URL>-robomaker.log```
-    code confirms that the file path:
-        includes ```leaderboard```
-        ends in ```*.log```
-    returns via: 
-        ```path_logs_leaderboard = path.finder('leaderboard’)```
+    leaderboard data:
+        via tkinter finder window guides user to point to file path as follows
+            ```[your model name] / logs / training / training-<14 digit date time>-<22 character URL>-robomaker.log```
+        code confirms that the file path:
+            includes ```leaderboard```
+            ends in ```*.log```
+        returns via: 
+            ```path_logs_leaderboard = path.finder('leaderboard’)```
 
 
 ## source file, item, data type (integer if not noted)
