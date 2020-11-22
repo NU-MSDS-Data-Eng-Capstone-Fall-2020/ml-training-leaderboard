@@ -10,8 +10,8 @@
 
   model_data_assembly.py
   - [x] import modules that get
-        [x] metadata of model
-        [x] 
+        - [x] metadata of model
+        - [x] 
   - [x] copy users tar data, unzip
   - [x] load hyperparameters.json directly wholely; can be more selective.
   - [x] load training_params.yaml and from there selected items.
