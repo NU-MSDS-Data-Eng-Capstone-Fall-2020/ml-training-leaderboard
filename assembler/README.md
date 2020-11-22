@@ -95,25 +95,25 @@
 ## source file, item, data type (```i``` integer, ```f``` float, ```s``` string, and list)
 
 metadata from model from the ```[your model name]-model/model_metadata.json``` file:
-- speed_granularity  - i
-- speed_max - i
-- steer_granularity - i
-- steer_max - i
-- lidar sensor  - i
-- camera stereo or mono  - i 
+- speed_granularity ```i```
+- speed_max ```i```
+- steer_granularity ```i```
+- steer_max ```i```
+- lidar sensor ```i```
+- camera stereo or mono ```i``` 
 
 hyperparameters from a ```[your model name]/logs/*/*-robomaker.log``` files:
 - batch_size ```i```
 - beta_entropy - f
 - discount_factor - f
 - e_greedy_value - f
-- epsilon_steps
+- epsilon_steps ```i```
 - exploration_type - s
 - loss_type - s
 - lr - f
-- num_episodes_between_training - i
-- num_epochs - i
-- stack_size - i
+- num_episodes_between_training ```i```
+- num_epochs ```i```
+- stack_size ```i```
 - term_cond_avg_score - f
 - term_cond_max_episodes - f
 
@@ -124,14 +124,14 @@ metadata from evaluation stage from ```*.log``` files:
 - model_name_eval - s
 - racer_name_eval - s
 - track_eval - s
-- trials_eval - i
+- trials_eval ```i```
 
 metadata from leaderboard stage from ```*.log``` files:
-- trials_lead - i
+- trials_lead ```i```
 - track_lead - s
 
 results from training from ```*.json``` files are in the form of a dict of list of all epsisodes:
-- trials_train - list of i
+- trials_train ```list of i```
 - episodes_train - list of i
 - episode_statuses_train - list of s
 - completion_pcts_train - list of i
