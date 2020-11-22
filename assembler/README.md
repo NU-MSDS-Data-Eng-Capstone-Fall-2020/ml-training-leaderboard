@@ -22,9 +22,20 @@
   - [x] add metadata from leaderboard stage to "model_data"
   - [x] add results from training to "model_data"
   - [x] add results from evaluation to "model_data"
+  
+  ###  hyperparameters.py and metadata_stage.py
+  
+  Both modules use similar methods to parse the log files for data.
+  
+  ###  path.py
+  
+  Uses tkinter package, which is standard Python interface to the Tk GUI toolkit, to let the user find the entitled files in their file system.  This module ensures the user only selects required file type (```*.log``` or ```*.json``` depending on the situation), ensures that the user selects a ```robomaker.log``` and not ```sagemaker.log``` file, and returns a path to the desired file.  For training, evaluation and leaderboard files, a ```*.log``` file is found by the user and the module uses this path to find a ```.json``` file and that path is returned as well.
 
+### ```results_evaluation.py``` and ```results_training.py```
 
-### source file, item, data type (integer if not noted)
+Both assemble a dictionary of lists from the ```*metrics.json``` files in the ```training``` and ```leaderboard``` folders.
+
+## source file, item, data type (integer if not noted)
 
 model_data.json:
 - speed_granularity
