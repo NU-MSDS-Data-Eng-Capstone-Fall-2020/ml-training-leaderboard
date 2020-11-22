@@ -119,17 +119,17 @@
 - term_cond_max_episodes ```i```
 
 **metadata from training stage** from the ```[your model name]/logs/training/training-*-*-robomaker.log``` file:
-- track_train ```s```
+- track_meta_train ```s```
 
 **metadata from evaluation stage** from the ```[your model name]/logs/evaluation/evaluation-*-*-robomaker.log``` file:
-- model_name_eval ```s```
-- racer_name_eval ```s```
-- track_eval ```s```
-- trials_eval ```i```
+- model_name_meta_eval ```s```
+- racer_name_meta_eval ```s```
+- track_meta_eval ```s```
+- trials_meta_eval ```i```
 
 **metadata from leaderboard stage** from the ```[your model name]/logs/leaderboard/leaderboard-<14 digit date time>-<22 character URL>-robomaker.log``` file:
-- trials_lead ```s```
-- track_lead ```s```
+- trials_meta_lead ```s```
+- track_meta_lead ```s```
 
 **results from training** from the ```[your model name]/metrics/training/training-*-*.json``` file are in the form of a dict of list of ```i```, ```f```, or ```s``` from all training epsisodes:
 - trials_train ```list of i```

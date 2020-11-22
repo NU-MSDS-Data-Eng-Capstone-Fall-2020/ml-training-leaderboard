@@ -17,20 +17,20 @@ def make_dict():
         model_data[i] = hyperparameters_dict[i]
 
     metadata_training = metadata_stage.get_dict(path_logs_training)
-    model_data["track_train"] = metadata_training["WORLD_NAME"] # <— assert valid track
+    model_data["track_meta_train"] = metadata_training["WORLD_NAME"] # <— assert valid track
 
     metadata_evaluation = metadata_stage.get_dict(path_logs_evaluation)
     # get eval track, episodes
-    model_data["model_name_eval"] = metadata_evaluation["MODEL_NAME"]
-    model_data["racer_name_eval"] = metadata_evaluation["RACER_NAME"]
-    model_data["track_eval"] = metadata_evaluation["WORLD_NAME"] # <— assert valid$
-    model_data["trials_eval"] = metadata_evaluation["NUMBER_OF_TRIALS"]
+    model_data["model_name_meta_eval"] = metadata_evaluation["MODEL_NAME"]
+    model_data["racer_name_meta_eval"] = metadata_evaluation["RACER_NAME"]
+    model_data["track_meta_eval"] = metadata_evaluation["WORLD_NAME"] # <— assert valid$
+    model_data["trials_meta_eval"] = metadata_evaluation["NUMBER_OF_TRIALS"]
     # ensure race type is time trial and same training and eval
     race_type_same = metadata_evaluation["RACE_TYPE"] == metadata_training["RACE_TYPE"] == "TIME_TRIAL"
 
     metadata_leaderboard = metadata_stage.get_dict(path_logs_leaderboard)
-    model_data["trials_lead"] = int(metadata_leaderboard["NUMBER_OF_TRIALS"])
-    model_data["track_lead"] = metadata_leaderboard["WORLD_NAME"] # <— assert valid$
+    model_data["trials_meta_lead"] = int(metadata_leaderboard["NUMBER_OF_TRIALS"])
+    model_data["track_meta_lead"] = metadata_leaderboard["WORLD_NAME"] # <— assert valid$
     # ensure model name is same
     model_name_same = metadata_evaluation["MODEL_NAME"] == metadata_leaderboard["MODEL_NAME"]
     # ensure racer name is same
