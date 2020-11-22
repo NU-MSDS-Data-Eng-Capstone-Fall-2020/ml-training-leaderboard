@@ -103,7 +103,7 @@ metadata from model from the ```[your model name]-model/model_metadata.json``` f
 - camera stereo or mono  - i 
 
 hyperparameters from a ```[your model name]/logs/*/*-robomaker.log``` files:
-- batch_size - ```i```
+- batch_size ```i```
 - beta_entropy - f
 - discount_factor - f
 - e_greedy_value - f
