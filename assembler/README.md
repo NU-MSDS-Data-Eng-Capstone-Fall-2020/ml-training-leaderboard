@@ -94,7 +94,7 @@
 
 ## source file, item, data type (```i``` integer, ```f``` float, ```s``` string, and list)
 
-metadata from model from the ```[your model name]-model/model_metadata.json``` file:
+#### metadata from model from the ```[your model name]-model/model_metadata.json``` file:
 - speed_granularity ```i```
 - speed_max ```i```
 - steer_granularity ```i```
