@@ -102,8 +102,8 @@ metadata from model from the ```[your model name]-model/model_metadata.json``` f
 - lidar sensor  - i
 - camera stereo or mono  - i 
 
-hyperparameters from ```[your model name]/logs/*/*-robomaker.log``` files**:
-- batch_size - i
+hyperparameters from a ```[your model name]/logs/*/*-robomaker.log``` files:
+- batch_size - ```i```
 - beta_entropy - f
 - discount_factor - f
 - e_greedy_value - f
@@ -111,7 +111,7 @@ hyperparameters from ```[your model name]/logs/*/*-robomaker.log``` files**:
 - exploration_type - s
 - loss_type - s
 - lr - f
-- num_episodes_between_training
+- num_episodes_between_training - i
 - num_epochs - i
 - stack_size - i
 - term_cond_avg_score - f
