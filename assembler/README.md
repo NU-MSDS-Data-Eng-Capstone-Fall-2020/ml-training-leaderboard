@@ -4,6 +4,7 @@
   - [x] checks: train = eval track e.g.
   - [x] code to enable user to identify path to file
   - [ ] filter hyperparameters to smaller set
+  - [ ] ensure hyperparameters are the same in training, evaluation, leaderboard log files.
   - [ ] ensure: train = eval track e.g.
   
 ## outline:
@@ -25,11 +26,11 @@
   
   ###  hyperparameters.py and metadata_stage.py
   
-  Both modules use similar methods to parse the log files for data.
+  Both modules use similar methods to parse the log files for the hyperparameters and meta data from the training, evaluation and leaderboard stages.  Presently, only use hyperparameters from training stage.  A check should be put in place to ensure all 3 hyperparameters are the same.
   
   ###  path.py
   
-  Uses tkinter package, which is standard Python interface to the Tk GUI toolkit, to let the user find the entitled files in their file system.  This module ensures the user only selects required file type (```*.log``` or ```*.json``` depending on the situation), ensures that the user selects a ```robomaker.log``` and not ```sagemaker.log``` file, and returns a path to the desired file.  For training, evaluation and leaderboard files, a ```*.log``` file is found by the user and the module uses this path to find a ```.json``` file and that path is returned as well.
+  Uses ```tkinter``` package, which is the standard Python interface to the ```Tk``` GUI toolkit, to let the user open a finder window to find and select the entitled files in their file system.  This module ensures the user only selects required file type (```*.log``` or ```*.json``` depending on the situation), ensures that the user selects a ```robomaker.log``` and not ```sagemaker.log``` file, and returns a path to the desired file.  For training, evaluation and leaderboard files, a ```*.log``` file is found by the user and the module uses this path to find a ```.json``` file and that path is returned as well.
 
 ### ```results_evaluation.py``` and ```results_training.py```
 
