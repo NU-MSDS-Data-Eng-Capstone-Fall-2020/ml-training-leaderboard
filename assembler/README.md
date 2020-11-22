@@ -92,7 +92,7 @@
     ```path_logs_leaderboard = path.finder('leaderboard’)```
 
 
-## source file, item, data type (integer if not noted)
+## source file, item, data type (```i``` integer, ```f``` float, ```s``` string, & list)
 
 model_data.json:
 - speed_granularity  - i
