@@ -9,7 +9,7 @@
   
 ## outline:
 
-###  model_data_assembly.py
+###  ```model_data_assembly.py```
   - [x] import modules that get:
     - [x] metadata of model,
     - [x] hyperparameters of model,
@@ -24,11 +24,11 @@
   - [x] add results from training to "model_data"
   - [x] add results from evaluation to "model_data"
   
-  ###  hyperparameters.py and metadata_stage.py
+  ###  ```hyperparameters.py``` and ```metadata_stage.py```
   
   Both modules use similar methods to parse the log files for the hyperparameters and meta data from the training, evaluation and leaderboard stages.  Presently, only use hyperparameters from training stage.  A check should be put in place to ensure all 3 hyperparameters are the same.
   
-  ###  path.py
+  ###  ```path.py```
   
   Uses ```tkinter``` package, which is the standard Python interface to the ```Tk``` GUI toolkit, to let the user open a finder window to find and select the entitled files in their file system.  This module ensures the user only selects required file type (```*.log``` or ```*.json``` depending on the situation), ensures that the user selects a ```robomaker.log``` and not ```sagemaker.log``` file, and returns a path to the desired file.  For training, evaluation and leaderboard files, a ```*.log``` file is found by the user and the module uses this path to find a ```.json``` file and that path is returned as well.
 
@@ -39,15 +39,15 @@ Both assemble a dictionary of lists from the ```*metrics.json``` files in the ``
 ## source file, item, data type (integer if not noted)
 
 model_data.json:
-- speed_granularity
-- speed_max
-- steer_granularity
-- steer_max
-- lidar
-- camera
+- speed_granularity  - i
+- speed_max - i
+- steer_granularity - i
+- steer_max - i
+- lidar sensor  - i
+- camera stereo or mono  - i 
 
-hyperparameters.json:
-- batch_size
+hyperparameters from ```*.log``` files:
+- batch_size - i
 - beta_entropy - f
 - discount_factor - f
 - e_greedy_value - f
@@ -56,38 +56,42 @@ hyperparameters.json:
 - loss_type - s
 - lr - f
 - num_episodes_between_training
-- num_epochs
-- stack_size
+- num_epochs - i
+- stack_size - i
 - term_cond_avg_score - f
 - term_cond_max_episodes - f
 
-training_params.yaml (all except episodes_train are string):
-- car_name_train
-- track_train
-- episodes_train
+metadata from training stage from ```*.log``` files:
+- track_train - s
 
-eval_params.yaml (all string):
-- model_name_eval
-- racer_name_eval
-- track_eval
+metadata from evaluation stage from ```*.log``` files:
+- model_name_eval - s
+- racer_name_eval - s
+- track_eval - s
+- trials_eval - i
 
-training.json (all list type):
-- trials_train
-- episode_statuses_train
-- completion_pcts_train
-- reward_scores_train
-- elapsed_times_train
-- metric_times_train
+metadata from leaderboard stage from ```*.log``` files:
+- trials_lead - i
+- track_lead - s
 
-evaluation.json (all list type):
-- trials_eval
-- episode_statuses_eval
-- completion_pcts_eval
-- reset_counts_eval
-- crash_counts_eval
-- off_track_counts_eval
-- elapsed_times_eval
-- metric_times_eval
+results from training from ```*.json``` files are in the form of a dict of list of all epsisodes:
+- trials_train - list of i
+- episodes_train - list of i
+- episode_statuses_train - list of s
+- completion_pcts_train - list of i
+- reward_scores_train - list of i
+- elapsed_times_train - list of i
+- metric_times_train - list of i
+
+results from evaluation from ```*.json``` files are in the form of a dict of list of all epsisodes:
+- trials_eval - list of i
+- completion_pcts_eval - list of i
+- episode_statuses_train - list of s
+- reset_counts_eval - list of i
+- crash_counts_eval - list of i
+- off_track_counts_eval - list of i
+- elapsed_times_eval - list of i
+- metric_times_eval - list of i
 
 
 ## Four folders are downloadable from AWS DR: here are their file trees

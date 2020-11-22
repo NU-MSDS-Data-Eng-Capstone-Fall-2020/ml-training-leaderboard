@@ -35,6 +35,7 @@ def make_dict():
     model_name_same = metadata_evaluation["MODEL_NAME"] == metadata_leaderboard["MODEL_NAME"]
     # ensure racer name is same
     racer_name_same = metadata_evaluation["RACER_NAME"] == metadata_leaderboard["RACER_NAME"]
+    # ensure race type is same
     race_type_same = metadata_leaderboard["RACE_TYPE"] == metadata_training["RACE_TYPE"] == "TIME_TRIAL"
 
     results_training_dict = results_training.get_dict(path_training_results)
