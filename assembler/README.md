@@ -99,8 +99,8 @@
 - speed_max ```i```
 - steer_granularity ```i```
 - steer_max ```i```
-- lidar sensor ```i```
-- camera stereo or mono ```i``` 
+- lidar ```i binary```
+- camera ```i binary``` 
 
 **hyperparameters** from the ```[your model name]/logs/training/training-*-*-robomaker.log``` file:
 - batch_size ```i```
@@ -113,9 +113,10 @@
 - lr ```f```
 - num_episodes_between_training ```i```
 - num_epochs ```i```
+- sac_alpha ```f```
 - stack_size ```i```
 - term_cond_avg_score ```f```
-- term_cond_max_episodes ```f```
+- term_cond_max_episodes ```i```
 
 **metadata from training stage** from the ```[your model name]/logs/training/training-*-*-robomaker.log``` file:
 - track_train ```s```
@@ -127,7 +128,7 @@
 - trials_eval ```i```
 
 **metadata from leaderboard stage** from the ```[your model name]/logs/leaderboard/leaderboard-<14 digit date time>-<22 character URL>-robomaker.log``` file:
-- trials_lead ```i```
+- trials_lead ```s```
 - track_lead ```s```
 
 **results from training** from the ```[your model name]/metrics/training/training-*-*.json``` file are in the form of a dict of list of ```i```, ```f```, or ```s``` from all training epsisodes:
@@ -142,7 +143,7 @@
 **results from evaluation** from the ```[your model name]/metrics/evaluation/evaluation-*-*.json``` file are in the form of a dict of list of ```i```, ```f```, or ```s``` from all evaluation epsisodes:
 - trials_eval - list of i
 - completion_pcts_eval - list of i
-- episode_statuses_train - list of s
+- episode_statuses_eval - list of s
 - reset_counts_eval - list of i
 - crash_counts_eval - list of i
 - off_track_counts_eval - list of i

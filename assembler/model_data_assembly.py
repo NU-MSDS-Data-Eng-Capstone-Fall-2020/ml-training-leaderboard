@@ -29,7 +29,7 @@ def make_dict():
     race_type_same = metadata_evaluation["RACE_TYPE"] == metadata_training["RACE_TYPE"] == "TIME_TRIAL"
 
     metadata_leaderboard = metadata_stage.get_dict(path_logs_leaderboard)
-    model_data["trials_lead"] = metadata_leaderboard["NUMBER_OF_TRIALS"]
+    model_data["trials_lead"] = int(metadata_leaderboard["NUMBER_OF_TRIALS"])
     model_data["track_lead"] = metadata_leaderboard["WORLD_NAME"] # <— assert valid$
     # ensure model name is same
     model_name_same = metadata_evaluation["MODEL_NAME"] == metadata_leaderboard["MODEL_NAME"]
