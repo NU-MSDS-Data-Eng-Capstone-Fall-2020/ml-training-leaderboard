@@ -117,10 +117,10 @@ hyperparameters from a ```[your model name]/logs/*/*-robomaker.log``` files:
 - term_cond_avg_score ```f```
 - term_cond_max_episodes ```f```
 
-metadata from training stage from ```*.log``` files:
+results from training stage from ```*.log``` files:
 - track_train ```s```
 
-metadata from evaluation stage from ```*.log``` files:
+results from evaluation stage from ```*.log``` files:
 - model_name_eval ```s```
 - racer_name_eval ```s```
 - track_eval ```s```
