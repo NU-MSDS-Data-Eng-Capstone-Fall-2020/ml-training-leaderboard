@@ -43,8 +43,8 @@
 
 - code confirms that the file path:
     - includes ```model```
-            ends in ```*.json```
-        returns via:
+    - ends in ```*.json```
+- returns via:
             ```path_metadata_model = path.finder('model’)```
 
     training data:
