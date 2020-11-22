@@ -94,7 +94,7 @@
 
 ## source file, item, data type (```i``` integer, ```f``` float, ```s``` string, and list)
 
-```[your model name]-model/model_metadata.json```:
+metadata from model from the ```[your model name]-model/model_metadata.json``` file:
 - speed_granularity  - i
 - speed_max - i
 - steer_granularity - i
@@ -102,7 +102,7 @@
 - lidar sensor  - i
 - camera stereo or mono  - i 
 
-hyperparameters from ```[your model name]/logs/*/*-robomaker.log``` files:
+hyperparameters from ```[your model name]/logs/*/*-robomaker.log``` files**:
 - batch_size - i
 - beta_entropy - f
 - discount_factor - f
