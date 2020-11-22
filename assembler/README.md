@@ -40,14 +40,14 @@
 - via tkinter finder window guides user to point to file path as follows:
 
     ```[your model name]-model / model_metadata.json```
-
 - code confirms that the file path:
     - includes ```model```
     - ends in ```*.json```
 - returns via:
-            ```path_metadata_model = path.finder('model’)```
 
-    training data:
+    ```path_metadata_model = path.finder('model’)```
+
+training data:
     
         via tkinter finder window guides user to point to file path as follows:
             ```[your model name] / logs / training / training-<14 digit date time>-<22 character URL>-robomaker.log```
