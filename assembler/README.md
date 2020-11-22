@@ -38,7 +38,7 @@
 
 #### model data:
 - via tkinter finder window guides user to point to file path as follows:
-    ```[your model name]-model / model_metadata.json```
+        ```[your model name]-model / model_metadata.json```
 - code confirms that the file path:
     - includes ```model```
             ends in ```*.json```
