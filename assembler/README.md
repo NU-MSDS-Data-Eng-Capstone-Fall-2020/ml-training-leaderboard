@@ -51,7 +51,7 @@
 #### training data:
 - via tkinter finder window guides user to point to file path as follows:
 
-    ```[your model name] / logs / training / training-<14 digit date time>-<22 character URL>-robomaker.log```
+    ```[your model name]/logs/training/training-<14 digit date time>-<22 character URL>-robomaker.log```
     
 - code confirms that the file path:
     - [x] includes ```training```
