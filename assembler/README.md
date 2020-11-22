@@ -102,7 +102,7 @@
 - lidar sensor  - i
 - camera stereo or mono  - i 
 
-hyperparameters from ```*.log``` files:
+hyperparameters from ````[your model name]/metrics/*/*.json``` files:
 - batch_size - i
 - beta_entropy - f
 - discount_factor - f
