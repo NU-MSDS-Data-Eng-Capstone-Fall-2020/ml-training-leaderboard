@@ -48,15 +48,17 @@
 
     ```path_metadata_model = path.finder('model’)```
 
-training data:
+#### training data:
+- via tkinter finder window guides user to point to file path as follows:
+
+    ```[your model name] / logs / training / training-<14 digit date time>-<22 character URL>-robomaker.log```
     
-        via tkinter finder window guides user to point to file path as follows:
-            ```[your model name] / logs / training / training-<14 digit date time>-<22 character URL>-robomaker.log```
-        code confirms that the file path:
-            includes ```training```
-            ends in ```*.log```
-            does not include ```sagemaker```
-        automatically finds metrics (aka results) path at:
+- code confirms that the file path:
+    - [x] includes ```training```
+    - [x] ends in ```*.log```
+    - [x] does not include ```sagemaker```
+    
+- automatically finds metrics (aka results) path at:
             ```[your model name] / metrics / training / training-<14 digit date time>-<22 character URL>.json```
         returns via:
             ```path_logs_training, path_training_results = path.finder('training’)```
