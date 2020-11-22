@@ -94,7 +94,7 @@
 
 ## source file, item, data type (```i``` integer, ```f``` float, ```s``` string, and list)
 
-metadata from model from the ```[your model name]-model/model_metadata.json``` file:
+**metadata from model** from the ```[your model name]-model/model_metadata.json``` file:
 - speed_granularity ```i```
 - speed_max ```i```
 - steer_granularity ```i```
@@ -102,7 +102,7 @@ metadata from model from the ```[your model name]-model/model_metadata.json``` f
 - lidar sensor ```i```
 - camera stereo or mono ```i``` 
 
-hyperparameters from the ```[your model name]/logs/training/training-*-*-robomaker.log``` file:
+**hyperparameters** from the ```[your model name]/logs/training/training-*-*-robomaker.log``` file:
 - batch_size ```i```
 - beta_entropy ```f```
 - discount_factor ```f```
@@ -117,20 +117,20 @@ hyperparameters from the ```[your model name]/logs/training/training-*-*-robomak
 - term_cond_avg_score ```f```
 - term_cond_max_episodes ```f```
 
-metadata from training stage from the ```[your model name]/logs/training/training-*-*-robomaker.log``` file:
+**metadata from training stage** from the ```[your model name]/logs/training/training-*-*-robomaker.log``` file:
 - track_train ```s```
 
-metadata from evaluation stage from the ```[your model name]/logs/evaluation/evaluation-*-*-robomaker.log``` file:
+**metadata from evaluation stage** from the ```[your model name]/logs/evaluation/evaluation-*-*-robomaker.log``` file:
 - model_name_eval ```s```
 - racer_name_eval ```s```
 - track_eval ```s```
 - trials_eval ```i```
 
-metadata from leaderboard stage from the ```[your model name]/logs/leaderboard/leaderboard-<14 digit date time>-<22 character URL>-robomaker.log``` file:
+**metadata from leaderboard stage** from the ```[your model name]/logs/leaderboard/leaderboard-<14 digit date time>-<22 character URL>-robomaker.log``` file:
 - trials_lead ```i```
 - track_lead ```s```
 
-results from training from the ```[your model name]/metrics/training/training-*-*.json``` file are in the form of a dict of list of ```i```, ```f```, or ```s``` from all training epsisodes:
+**results from training** from the ```[your model name]/metrics/training/training-*-*.json``` file are in the form of a dict of list of ```i```, ```f```, or ```s``` from all training epsisodes:
 - trials_train ```list of i```
 - episodes_train ```list of i```
 - episode_statuses_train ```list of s```
@@ -139,7 +139,7 @@ results from training from the ```[your model name]/metrics/training/training-*-
 - elapsed_times_train ```list of i```
 - metric_times_train ```list of i```
 
-results from evaluation from the ```[your model name]/metrics/evaluation/evaluation-*-*.json``` file are in the form of a dict of list of ```i```, ```f```, or ```s``` from all evaluation epsisodes:
+**results from evaluation** from the ```[your model name]/metrics/evaluation/evaluation-*-*.json``` file are in the form of a dict of list of ```i```, ```f```, or ```s``` from all evaluation epsisodes:
 - trials_eval - list of i
 - completion_pcts_eval - list of i
 - episode_statuses_train - list of s
