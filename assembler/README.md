@@ -37,10 +37,10 @@
   Uses ```tkinter``` package, which is the standard Python interface to the ```Tk``` GUI toolkit, to let the user open a finder window with a title guiding the user to find and select the needed file in their file system.  This module ensures the user only selects required file type (```*.log``` or ```*.json``` depending on the situation), ensures that the user selects a ```robomaker.log``` and not ```sagemaker.log``` file, ensures the user only selects ```training``` or ```evaluation``` or ```leaderboard``` file when requested.  If user fails in this regard, the finder window pops up again to let the user try again.  The function returns a path to the desired file.  For training, evaluation and leaderboard files, a ```*.log``` file is found by the user and the module uses this path to find a ```.json``` file and that path is returned as well.  Here's the specifics:
 
 #### model data:
-    - via tkinter finder window guides user to point to file path as follows:
-            ```[your model name]-model / model_metadata.json```
-    - code confirms that the file path:
-            includes ```model```
+- via tkinter finder window guides user to point to file path as follows:
+    ```[your model name]-model / model_metadata.json```
+- code confirms that the file path:
+    - includes ```model```
             ends in ```*.json```
         returns via:
             ```path_metadata_model = path.finder('model’)```
