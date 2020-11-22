@@ -86,7 +86,7 @@
     ```[your model name]/logs/training/training-<14 digit date time>-<22 character URL>-robomaker.log```
 - code confirms that the file path:
     - [x] includes ```leaderboard```
-    - x] ends in ```*.log```
+    - [x] ends in ```*.log```
 - returns via: 
 
     ```path_logs_leaderboard = path.finder('leaderboard’)```
