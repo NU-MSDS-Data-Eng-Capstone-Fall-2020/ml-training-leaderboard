@@ -1,46 +1,47 @@
 #!/usr/bin/env python
+# https://wiki.deepracing.io/Customise_Local_Training
 
 import json
-import yaml
-from collections import OrderedDict 
+from collections import OrderedDict
+from get import metadata_model, hyperparameters, metadata_stage, results_evaluation, results_training, path
 
-from load_model_data import model_dict
-from load_training_lists import training_data
-from load_evaluation_lists import evaluation_data
-
-def load_json(fn):
-    with open(fn) as fin:
-        return(json.load(fin))
-
-def load_yml(fn):
-    with open(fn) as fin:
-        return(yaml.full_load(fin))
+path_metadata_model = path.finder('model')
+path_logs_training, path_training_results = path.finder('training')
+path_logs_evaluation, path_evaluation_results = path.finder('evaluation')
+path_logs_leaderboard = path.finder('leaderboard')
 
 def make_dict():
-    model_data = model_dict()
+    model_data = metadata_model.get_dict(path_metadata_model)
+    hyperparameters_dict = hyperparameters.get_dict(path_logs_training)
+    for i in hyperparameters_dict:
+        model_data[i] = hyperparameters_dict[i]
 
-    hyperparameters = load_json(r'hyperparameters.json')
-    for i in hyperparameters:
-        model_data[i] = hyperparameters[i]
+    metadata_training = metadata_stage.get_dict(path_logs_training)
+    model_data["track_train"] = metadata_training["WORLD_NAME"] # <— assert valid track
 
-    training_parameters = load_yml(r'training_params.yaml')
-    model_data["car_name_train"] = training_parameters["CAR_NAME"]
-    model_data["track_train"] = training_parameters["WORLD_NAME"] # <— assert valid track
-    model_data["episodes_train"] = training_parameters["NUMBER_OF_EPISODES"]
-
-    eval_parameters = load_yml(r'eval_params.yaml')
-    # ensure same racer, car, model
-    car_same = eval_parameters["CAR_NAME"] = training_parameters["CAR_NAME"]
+    metadata_evaluation = metadata_stage.get_dict(path_logs_evaluation)
     # get eval track, episodes
-    model_data["model_name_eval"] = eval_parameters["MODEL_NAME"]
-    model_data["racer_name_eval"] = eval_parameters["RACER_NAME"]
-    model_data["track_eval"] = eval_parameters["WORLD_NAME"] # <— assert valid$
+    model_data["model_name_eval"] = metadata_evaluation["MODEL_NAME"]
+    model_data["racer_name_eval"] = metadata_evaluation["RACER_NAME"]
+    model_data["track_eval"] = metadata_evaluation["WORLD_NAME"] # <— assert valid$
+    model_data["trials_eval"] = metadata_evaluation["NUMBER_OF_TRIALS"]
+    # ensure race type is time trial and same training and eval
+    race_type_same = metadata_evaluation["RACE_TYPE"] == metadata_training["RACE_TYPE"] == "TIME_TRIAL"
 
-    training_results = training_data()
+    metadata_leaderboard = metadata_stage.get_dict(path_logs_leaderboard)
+    model_data["trials_lead"] = metadata_leaderboard["NUMBER_OF_TRIALS"]
+    model_data["track_lead"] = metadata_leaderboard["WORLD_NAME"] # <— assert valid$
+    # ensure model name is same
+    model_name_same = metadata_evaluation["MODEL_NAME"] == metadata_leaderboard["MODEL_NAME"]
+    # ensure racer name is same
+    racer_name_same = metadata_evaluation["RACER_NAME"] == metadata_leaderboard["RACER_NAME"]
+    race_type_same = metadata_leaderboard["RACE_TYPE"] == metadata_training["RACE_TYPE"] == "TIME_TRIAL"
+
+    training_results = results_training.get_dict(path_training_results)
     for i in training_results.keys():
         model_data[i] = training_results[i]
 
-    evaluation_results = evaluation_data()
+    evaluation_results = results_evaluation.get_dict(path_evaluation_results)
     for i in evaluation_results.keys():
         model_data[i] = evaluation_results[i]
 
