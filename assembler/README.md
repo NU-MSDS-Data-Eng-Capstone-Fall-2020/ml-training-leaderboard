@@ -10,7 +10,7 @@
 
 ## getting it running:
 
-1.  Create your model.  Train your model.  Evaluate your model.  Compete your model on leaderboard.
+1.  Create your model.  Train your model.  Evaluate your model.  Compete your model in virtual qualifier to obtain a leaderboard ranking.
 - <img width="1197" alt="Pasted Graphic 39" src="https://user-images.githubusercontent.com/38410965/99921188-c4c8c100-2cf6-11eb-9d92-4706e1b2fc23.png">
 
 2.  ```Actions``` --> ```Download physical car model``` menu item:
@@ -19,7 +19,7 @@
 3.  ```Download logs``` button for Training and Evaluation: 
 <img width="1197" alt="modeldepp" src="https://user-images.githubusercontent.com/38410965/99921257-2f79fc80-2cf7-11eb-990b-943c445406d8.png">
 
-4.  ```Download logs``` button for leaderboard.  (You need to enter your model into the virtual competition to come to this page.)
+4.  ```Download logs``` button for leaderboard.  
 <img width="1311" alt="2020 October Qualifier" src="https://user-images.githubusercontent.com/38410965/99921314-9eefec00-2cf7-11eb-81ad-8291e34c63a8.png">
 
 ## outline:
