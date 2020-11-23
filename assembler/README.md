@@ -29,7 +29,7 @@
     -   Stopping conditions
 <img width="1197" alt="Pasted Graphic 39" src="https://user-images.githubusercontent.com/38410965/99921188-c4c8c100-2cf6-11eb-9d92-4706e1b2fc23.png">
 
-... after training, evaluatoin, competing ...
+... after creating, training, evaluating, competing for ranking ...
 
 2.  ```Actions``` --> ```Download physical car model``` menu item:
 <img width="1197" alt="modeldepp" src="https://user-images.githubusercontent.com/38410965/99921207-dad68180-2cf6-11eb-8e6f-19746510f325.png">
@@ -40,6 +40,26 @@
 4.  ```Download logs``` button for leaderboard.  
 <img width="1311" alt="2020 October Qualifier" src="https://user-images.githubusercontent.com/38410965/99921314-9eefec00-2cf7-11eb-81ad-8291e34c63a8.png">
 
+5.  Downloads will appear as the model folder and three duplicate folders:
+<img width="537" alt="Items, 980 08 GB available" src="https://user-images.githubusercontent.com/38410965/99922334-10cb3400-2cfe-11eb-87ab-703ee62b1dae.png">
+
+6.  Make a directory, get inside, clone the repo, get inside the assembler folder, and call the python code:
+<img width="682" alt="renote Enumerating objects 107, done" src="https://user-images.githubusercontent.com/38410965/99922337-14f75180-2cfe-11eb-9ec0-96d927317860.png">
+
+7.  Follow the instructions at the top of the finder window to find the ```model_metadata.json``` file:
+<img width="912" alt="Pasted Graphic 1" src="https://user-images.githubusercontent.com/38410965/99922342-19236f00-2cfe-11eb-9691-605f6e73aed8.png">
+
+8.  Follow the instructions at the top of the finder window to find the ```training-*-*-robomaker.log``` file:
+<img width="1299" alt="Pasted Graphic 2" src="https://user-images.githubusercontent.com/38410965/99922349-217baa00-2cfe-11eb-8591-3cce17a8d102.png">
+
+9.  Follow the instructions at the top of the finder window to find the ```evaluation-*-*-robomaker.log``` file:
+<img width="1310" alt="Pasted Graphic 3" src="https://user-images.githubusercontent.com/38410965/99922354-2a6c7b80-2cfe-11eb-8815-d0ae3c41735e.png">
+
+10. Follow the instructions at the top of the finder window to find the ```leaderboard-*-*-robomaker.log``` file:
+<img width="1310" alt="Pasted Graphic 4" src="https://user-images.githubusercontent.com/38410965/99922360-322c2000-2cfe-11eb-9a1b-c8ee6838dfb0.png">
+
+11. Drink a sip of wine. You're done.
+<img width="1283" alt="Pasted Graphic 6" src="https://user-images.githubusercontent.com/38410965/99922369-3a845b00-2cfe-11eb-905b-c5721002e894.png">
 ## outline:
 
 ###  ```model_data_assembly.py```
