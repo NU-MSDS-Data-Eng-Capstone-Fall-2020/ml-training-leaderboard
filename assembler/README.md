@@ -6,7 +6,22 @@
   - [ ] filter hyperparameters to smaller set
   - [ ] ensure hyperparameters are the same in training, evaluation, leaderboard log files.
   - [ ] ensure: train = eval track e.g.
-  
+
+
+## getting it running:
+
+1.  Create your model.  Train your model.  Evaluate your model.  Compete your model on leaderboard.
+- <img width="1197" alt="Pasted Graphic 39" src="https://user-images.githubusercontent.com/38410965/99921188-c4c8c100-2cf6-11eb-9d92-4706e1b2fc23.png">
+
+2.  ```Actions``` --> ```Download physical car model``` menu item:
+<img width="1197" alt="modeldepp" src="https://user-images.githubusercontent.com/38410965/99921207-dad68180-2cf6-11eb-8e6f-19746510f325.png">
+
+3.  ```Download logs``` button for Training and Evaluation: 
+<img width="1197" alt="modeldepp" src="https://user-images.githubusercontent.com/38410965/99921257-2f79fc80-2cf7-11eb-990b-943c445406d8.png">
+
+4.  ```Download logs``` button for leaderboard.  (You need to enter your model into the virtual competition to come to this page.)
+<img width="1311" alt="2020 October Qualifier" src="https://user-images.githubusercontent.com/38410965/99921314-9eefec00-2cf7-11eb-81ad-8291e34c63a8.png">
+
 ## outline:
 
 ###  ```model_data_assembly.py```
@@ -269,8 +284,8 @@
                     ]
     sim-trace
         evaluation
-        ```<14 digit date time>-<22 character URL>```
-                training-simtrace
+            <14 digit date time>-<22 character URL>
+                evaluation-simtrace
                     0-iteration.csv
                         episode
                         steps
@@ -300,7 +315,7 @@
 
     logs
         leaderboard
-            ```evaluation-<14 digit date time>-<22 character URL>-robomaker.log```
+            evaluation-<14 digit date time>-<22 character URL>-robomaker.log
 
 ** the 22 character URL is base64 encoding without padding as suggested by this link:
 https://security.stackexchange.com/questions/194092/what-encryption-algorithm-outputs-22-characters-string
