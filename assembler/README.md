@@ -58,7 +58,7 @@
 10. Follow the instructions at the top of the finder window to find the ```leaderboard-*-*-robomaker.log``` file:
 <img width="1310" alt="Pasted Graphic 4" src="https://user-images.githubusercontent.com/38410965/99922360-322c2000-2cfe-11eb-9a1b-c8ee6838dfb0.png">
 
-11. Drink a sip of wine. You're done.
+11. Drink a sip of wine. You're done.  Here is your ```model_data.json``` file:
 <img width="1283" alt="Pasted Graphic 6" src="https://user-images.githubusercontent.com/38410965/99922369-3a845b00-2cfe-11eb-905b-c5721002e894.png">
 ## outline:
 
