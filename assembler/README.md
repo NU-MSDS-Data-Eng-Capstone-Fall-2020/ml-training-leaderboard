@@ -1,12 +1,8 @@
 ## todo:
 
-  - [ ] lint, test
-  - [x] checks: train = eval track e.g.
-  - [x] code to enable user to identify path to file
-  - [ ] filter hyperparameters to smaller set
+  - [ ] document in code, lint, test, CICD
   - [ ] ensure hyperparameters are the same in training, evaluation, leaderboard log files.
-  - [ ] ensure: train = eval track e.g.
-
+  - [ ] ensure: train log time ~ eval log time ~ leaderboard log time 
 
 ## getting it running:
 
@@ -60,6 +56,7 @@
 
 11. Drink a sip of wine. You're done.  Here is your ```model_data.json``` file:
 <img width="1283" alt="Pasted Graphic 6" src="https://user-images.githubusercontent.com/38410965/99922369-3a845b00-2cfe-11eb-905b-c5721002e894.png">
+
 ## outline:
 
 ###  ```model_data_assembly.py```
@@ -145,7 +142,7 @@
     ```path_logs_leaderboard = path.finder('leaderboard’)```
 
 
-## source file, item, data type (```i``` integer, ```f``` float, ```s``` string, and list)
+## Source files, items & data types (```i``` integer, ```f``` float, ```s``` string, and list)
 
 **metadata from model** from the ```[your model name]-model/model_metadata.json``` file:
 - speed_granularity ```i```
