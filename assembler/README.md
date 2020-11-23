@@ -29,6 +29,8 @@
     -   Stopping conditions
 <img width="1197" alt="Pasted Graphic 39" src="https://user-images.githubusercontent.com/38410965/99921188-c4c8c100-2cf6-11eb-9d92-4706e1b2fc23.png">
 
+... after training, evaluatoin, competing ...
+
 2.  ```Actions``` --> ```Download physical car model``` menu item:
 <img width="1197" alt="modeldepp" src="https://user-images.githubusercontent.com/38410965/99921207-dad68180-2cf6-11eb-8e6f-19746510f325.png">
 
