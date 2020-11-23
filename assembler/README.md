@@ -82,7 +82,7 @@
   
   ### ```metadata_model.py```
   
-  When you set up your model, you specify a race car's steering and speed with 4 parameters.  AWS DeepRacer combined all possible pairs of speed and steering to produce a much larger set of parameters.  That larger set of parameters is saved into ```model_metadata.json``` that you've downloaded.  This module converts that larger set of parameters back to the original 4 parameters, and adds in sensor settings as binaries.
+  When you set up your model, you specify a race car's steering and speed with 4 parameters.  AWS DeepRacer combines all possible pairs of these 4 speed and steering parameters to produce a much larger set of parameters.  That larger set of parameters is saved into ```model_metadata.json``` that you've downloaded.  This module converts that larger set of parameters back to the original 4 parameters, and adds in sensor settings as binaries.
   
   ###  ```hyperparameters.py``` and ```metadata_stage.py```
   
