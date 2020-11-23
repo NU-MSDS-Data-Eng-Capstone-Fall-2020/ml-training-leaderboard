@@ -1,8 +1,12 @@
+# assembler
+
 ## todo:
 
   - [ ] document in code, lint, test, CICD
   - [ ] ensure hyperparameters are the same in training, evaluation, leaderboard log files.
   - [ ] ensure: train log time ~ eval log time ~ leaderboard log time 
+
+
 
 ## getting it running:
 
@@ -56,6 +60,8 @@
 
 11. Drink a sip of wine. You're done.  Here is your ```model_data.json``` file:
 <img width="1283" alt="Pasted Graphic 6" src="https://user-images.githubusercontent.com/38410965/99922369-3a845b00-2cfe-11eb-905b-c5721002e894.png">
+
+
 
 ## outline:
 
@@ -142,6 +148,7 @@
     ```path_logs_leaderboard = path.finder('leaderboard’)```
 
 
+
 ## source files, items & data types (```i``` integer, ```f``` float, ```s``` string, and list):
 
 **metadata from model** from the ```[your model name]-model/model_metadata.json``` file:
@@ -199,6 +206,7 @@
 - completion_pcts_eval ```list of i```
 - elapsed_times_eval ```list of i```
 - metric_times_eval ```list of i```
+
 
 
 ## four folders are downloadable from AWS DR: here are their file trees:
