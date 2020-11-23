@@ -219,142 +219,142 @@
 
 1. MODEL data
 
-[your model name]-model
+    [your model name]-model
 
-    agent
-        model.pb
-    model_metadata.json
-        {
-        action_space: [
+        agent
+            model.pb
+        model_metadata.json
             {
-            steering_angle: integer,
-            speed: float
-            index: integer
-            },
-            {
-            repeat
+            action_space: [
+                {
+                steering_angle: integer,
+                speed: float
+                index: integer
+                },
+                {
+                repeat
+                }
+                repeat...
+                ],
+            sensor: [ string ]
+            neural_network: string
+            version: integer
             }
-            repeat...
-            ],
-        sensor: [ string ]
-        neural_network: string
-        version: integer
-        }
-    worker_0.multi_agent_graph_0.json
-    worker_0.multi_agent_graph.main_level.main_level.agent_0.csv
+        worker_0.multi_agent_graph_0.json
+        worker_0.multi_agent_graph.main_level.main_level.agent_0.csv
 
 ### Three folders with identical names [your model name] are downloadable:
 
 2. TRAINING data
 
-[your model name]
+    [your model name]
 
-    logs
-        training
-            training-<14 digit date time>-<22 character URL>-sagemaker.log
-            training-<14 digit date time>-<22 character URL>-robomaker.log
-    metrics
-        training
-            training-<14 digit date time>-<22 character URL>.json
-                {metrics: [{
-                    {
-                    metric_time: integer,
-                    trial: integer,
-                    episode_status: string,
-                    reward_score, integer
-                    completion_percentage: integer,
-                    elapsed_time_in_milliseconds: integer,
-                    start_time: integer,
-                    episode: integer,
-                    phase: string
-                    },
-                    {
-                    repeat
-                    }
-                    repeat ...
-                    ]
-    sim-trace
-        training
-            <14 digit date time>-<22 character URL>
-                training-simtrace
-                    0-iteration.csv (rows = episodes * steps)
-                        episode
-                        steps
-                        X
-                        Y
-                        yaw
-                        steer
-                        throttle
-                        action
-                        reward
-                        done
-                        all_wheels_on_track
-                        progress
-                        closest_waypoint
-                        track_len
-                        tstamp
-                        episode_status
-                    1-iteration.csv
+        logs
+            training
+                training-<14 digit date time>-<22 character URL>-sagemaker.log
+                training-<14 digit date time>-<22 character URL>-robomaker.log
+        metrics
+            training
+                training-<14 digit date time>-<22 character URL>.json
+                    {metrics: [{
+                        {
+                        metric_time: integer,
+                        trial: integer,
+                        episode_status: string,
+                        reward_score, integer
+                        completion_percentage: integer,
+                        elapsed_time_in_milliseconds: integer,
+                        start_time: integer,
+                        episode: integer,
+                        phase: string
+                        },
+                        {
                         repeat
-                    2-iteration.csv
-                    repeat ...
-                    7-iteration.csv
+                        }
+                        repeat ...
+                        ]
+        sim-trace
+            training
+                <14 digit date time>-<22 character URL>
+                    training-simtrace
+                        0-iteration.csv (rows = episodes * steps)
+                            episode
+                            steps
+                            X
+                            Y
+                            yaw
+                            steer
+                            throttle
+                            action
+                            reward
+                            done
+                            all_wheels_on_track
+                            progress
+                            closest_waypoint
+                            track_len
+                            tstamp
+                            episode_status
+                        1-iteration.csv
+                            repeat
+                        2-iteration.csv
+                        repeat ...
+                        7-iteration.csv
 
 3. EVALUATION data
 
-[your model name]
+    [your model name]
 
-    logs
-        evaluation
-            evaluation-<14 digit date time>-<22 character URL>-robomaker.log
-    metrics
-        evaluation
-            evaluation-<14 digit date time>-<22 character URL>.json
-                {metrics: [{
-                    {
-                    completion_percentage: integer,
-                    immobilized_count: integer,
-                    off_track_count: integer,
-                    elapsed_time_in_milliseconds: integer,
-                    episode_status: string,
-                    metric_time: integer,
-                    reset_count: integer,
-                    reversed_count: integer,
-                    crash_count: integer,
-                    start_time: integer,
-                    trial: integer,
-                    },
-                    {
-                    repeat
-                    }
-                    repeat ...
-                    ]
-    sim-trace
-        evaluation
-            <14 digit date time>-<22 character URL>
-                evaluation-simtrace
-                    0-iteration.csv
-                        episode
-                        steps
-                        X
-                        Y
-                        yaw
-                        steer
-                        throttle
-                        action
-                        reward
-                        done
-                        all_wheels_on_track
-                        progress
-                        closest_waypoint
-                        track_len
-                        tstamp
-                        episode_status
-                    1-iteration.csv
+        logs
+            evaluation
+                evaluation-<14 digit date time>-<22 character URL>-robomaker.log
+        metrics
+            evaluation
+                evaluation-<14 digit date time>-<22 character URL>.json
+                    {metrics: [{
+                        {
+                        completion_percentage: integer,
+                        immobilized_count: integer,
+                        off_track_count: integer,
+                        elapsed_time_in_milliseconds: integer,
+                        episode_status: string,
+                        metric_time: integer,
+                        reset_count: integer,
+                        reversed_count: integer,
+                        crash_count: integer,
+                        start_time: integer,
+                        trial: integer,
+                        },
+                        {
                         repeat
-                    2-iteration.csv
-                    repeat ...
-                    7-iteration.csv
+                        }
+                        repeat ...
+                        ]
+        sim-trace
+            evaluation
+                <14 digit date time>-<22 character URL>
+                    evaluation-simtrace
+                        0-iteration.csv
+                            episode
+                            steps
+                            X
+                            Y
+                            yaw
+                            steer
+                            throttle
+                            action
+                            reward
+                            done
+                            all_wheels_on_track
+                            progress
+                            closest_waypoint
+                            track_len
+                            tstamp
+                            episode_status
+                        1-iteration.csv
+                            repeat
+                        2-iteration.csv
+                        repeat ...
+                        7-iteration.csv
 
 4. LEADERBOARD data
 
