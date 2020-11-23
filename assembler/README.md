@@ -63,7 +63,7 @@
 
 
 
-## outline:
+## outline of the seven modules:
 
 ###  ```model_data_assembly.py```
   - [x] import modules that get:
@@ -79,6 +79,10 @@
   - [x] add metadata from leaderboard stage to "model_data"
   - [x] add results from training to "model_data"
   - [x] add results from evaluation to "model_data"
+  
+  ### ```metadata_model.py```
+  
+  When you set up your model, you specify a race car's steering and speed with 4 parameters.  When combined into all pairs of speed and steering produce a much larger set of parameters.  That larger set of parameters is what AWS DeepRacer saves in ```model_metadata.json```.  This module converts them back to the original 4 parameters, and adds in sensor settings as binaries.
   
   ###  ```hyperparameters.py``` and ```metadata_stage.py```
   
