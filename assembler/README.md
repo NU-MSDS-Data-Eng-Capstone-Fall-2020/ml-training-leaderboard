@@ -358,11 +358,11 @@
 
 4. LEADERBOARD data
 
-[your model name]
-
-    logs
-        leaderboard
-            evaluation-<14 digit date time>-<22 character URL>-robomaker.log
+    [your model name]
+    
+        logs
+            leaderboard
+                evaluation-<14 digit date time>-<22 character URL>-robomaker.log
 
 ** the 22 character URL is base64 encoding without padding as suggested by this link:
 https://security.stackexchange.com/questions/194092/what-encryption-algorithm-outputs-22-characters-string
