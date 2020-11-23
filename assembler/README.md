@@ -142,7 +142,7 @@
     ```path_logs_leaderboard = path.finder('leaderboard’)```
 
 
-## Source files, items & data types (```i``` integer, ```f``` float, ```s``` string, and list)
+## source files, items & data types (```i``` integer, ```f``` float, ```s``` string, and list):
 
 **metadata from model** from the ```[your model name]-model/model_metadata.json``` file:
 - speed_granularity ```i```
@@ -201,7 +201,7 @@
 - metric_times_eval ```list of i```
 
 
-## Four folders are downloadable from AWS DR: here are their file trees
+## four folders are downloadable from AWS DR: here are their file trees:
 
 ### One folder with name [your model name]-model is downloadable:
 
