@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 
 import json
-from get import path
 
 def get_dict(fn):
     with open (fn) as fin:
