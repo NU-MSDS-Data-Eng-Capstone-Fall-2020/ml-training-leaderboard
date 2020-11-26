@@ -2,7 +2,6 @@
 
 import json
 from collections import OrderedDict
-from get import path
 
 def action_space(model_metadata):
     steer_list = []

@@ -2,6 +2,7 @@
 
 import os
 from decimal import Decimal
+from statistics import mean
 
 import boto3
 
@@ -16,10 +17,11 @@ def lambda_handler(event, context):
 
     response = table.put_item(
         Item={
-            'Track': submission['Track'],
-            'Metric': submission['Metric'],
-            'Person': submission['Person'],
-            'Accuracy': Decimal(str(submission['Accuracy']))
+            'track_meta_eval': submission['track_meta_eval'],
+            'name': submission['name'],
+            'speed_max': Decimal(str(submission['speed_max'])),
+            'steer_max': Decimal(str(submission['steer_max'])),
+            'avg_completion_pct_eval': Decimal(str(mean(submission['completion_pcts_eval']))),
         }
     )
 

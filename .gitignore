@@ -133,3 +133,6 @@ pythonenv*
 
 # Local Lambda zip artifacts
 *.zip
+
+# File Storage
+.DS_Store
