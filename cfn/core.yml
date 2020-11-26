@@ -12,17 +12,17 @@ Resources:
         TableName: LeaderboardTable
         AttributeDefinitions: 
           - 
-            AttributeName: "Track"
+            AttributeName: "track_meta_eval"
             AttributeType: "S"
           - 
-            AttributeName: "Person"
+            AttributeName: "name"
             AttributeType: "S"
         KeySchema: 
           - 
-            AttributeName: "Track"
+            AttributeName: "track_meta_eval"
             KeyType: "HASH"
           - 
-            AttributeName: "Person"
+            AttributeName: "name"
             KeyType: "RANGE"
         ProvisionedThroughput: 
           ReadCapacityUnits: 1

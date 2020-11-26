@@ -13,10 +13,10 @@ def lambda_handler(event, context):
     dynamo = boto3.resource('dynamodb')
     table = dynamo.Table(TABLE_NAME)
 
-    track_name = event['data']['Track']
+    track_name = event['data']['track_meta_eval']
 
     response = table.query(
-        KeyConditionExpression=Key('Track').eq(track_name)
+        KeyConditionExpression=Key('track_meta_eval').eq(track_name)
     )
 
     print(response)

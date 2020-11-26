@@ -26,6 +26,7 @@ def submit(track_name, name, save_local=False):
 
     paths = retrieve_path()
     data = make_dict(*paths)
+    data['name'] = name
 
     client = boto3.client('lambda', region_name='us-east-1')
     response = client.invoke(
@@ -40,19 +41,25 @@ def submit(track_name, name, save_local=False):
 
 @cli.command(name="get-submissions")
 @click.option('--track-name', required=True, type=str)
-def get_submissions(track_name, name, save_local=False):
+def get_submissions(track_name):
     """Gets all entries in leaderboard for specified track"""
     
     client = boto3.client('lambda', region_name='us-east-1')
     response = client.invoke(
         FunctionName=GET_LAMBDA,
         Payload=json.dumps({
-            'data': {'Track': track_name}
+            'data': {'track_meta_eval': track_name}
         })
     )
 
+    leaders = json.loads(response['Payload'].read())['submissions']
+
     table = PrettyTable()
-    # TODO: print leaderboard
+    table.field_names = leaders[0].keys()
+    table.add_rows(
+        _.values() for _ in leaders
+    )
+    print(table.get_string())
 
 
 if __name__ == '__main__':
