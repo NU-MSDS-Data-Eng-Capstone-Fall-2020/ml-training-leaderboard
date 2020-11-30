@@ -36,7 +36,7 @@ def submit(track_name, name, save_local=False):
         })
     )
 
-    print(response)
+    print("Successfully submitted model")
 
 
 @cli.command(name="get-submissions")
@@ -53,6 +53,7 @@ def get_submissions(track_name):
     )
 
     leaders = json.loads(response['Payload'].read())['submissions']
+    leaders = sorted(leaders, key=lambda k: k['avg_completion_pct_eval'], reverse=True) 
 
     table = PrettyTable()
     table.field_names = leaders[0].keys()
